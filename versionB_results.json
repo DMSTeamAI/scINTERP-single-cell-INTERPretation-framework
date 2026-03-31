@@ -1,0 +1,1640 @@
+[
+  {
+    "cluster": "0",
+    "n_cells": 500,
+    "top_degs": [
+      "IL7R",
+      "TRAC",
+      "RPS27",
+      "CD3E",
+      "LTB",
+      "RPS27A",
+      "CD2",
+      "RPS3",
+      "CD3D",
+      "RPS29",
+      "RPL30",
+      "RPS15A",
+      "RPL21",
+      "ZFP36L2",
+      "RPS25",
+      "RPL13",
+      "IL32",
+      "RPLP2",
+      "BTG1",
+      "RPL34"
+    ],
+    "top_pathways_str": "Ribosome; Coronavirus disease; Allograft Rejection; Primary immunodeficiency; Hematopoietic cell lineage",
+    "gpt4o_naive": "Cluster 0 is most likely a **T-cell population**, probably enriched for **naive/central memory-like T cells**. This is supported by canonical T-cell markers **TRAC, CD3D, CD3E, and CD2**, together with **IL7R (CD127)**, which is commonly associated with T-cell survival and memory-like states. **LTB, IL32, ZFP36L2, and BTG1** are also consistent with lymphocyte identity and regulation. I do not see strong cytotoxic markers (for example, **NKG7, GNLY, PRF1, GZMB**) or clear Treg markers such as **FOXP3/IL2RA**, so this cluster is unlikely to represent highly cytotoxic T cells or classical Tregs.\n\nThe dominant active programs appear to be **T-cell receptor signaling/identity**, **lymphocyte survival/homeostasis** (consistent with **IL7R**), and a relatively **quiescent or non-effector state**, also suggested by **BTG1** and the absence of strong activation/exhaustion markers. The many ribosomal genes likely reflect general translational activity rather than a specific function.\n\nIn the LUAD tumor microenvironment, these cells may represent a **resident or recruited adaptive immune compartment** that can support antitumor immunity, but they may also be relatively inactive unless further activated by antigen presentation or inflammatory cues.",
+    "versionB_narrative": "Cluster 0 is most consistent with a **non-malignant immune-cell population**, rather than a LUAD epithelial/tumor compartment, because the evidence packet shows **very low LUAD pathway relevance (0%)** and explicitly warns that this cluster \u201cmay be non-cancer cell type\u201d (agent summary/uncertainty flags). The only LUAD-relevant genes detected are **CD3D and CD3E** (driver-gene agent), which are listed in the packet and are more compatible with an immune-associated signal than with a tumor-intrinsic LUAD program based on the evidence provided. No conflict flags were reported (conflict agent).\n\n[UNCERTAIN] A **T-cell identity** is plausible because **CD3D and CD3E** were detected (driver-gene agent), but this assignment remains tentative since **no verified DEGs were confirmed** and **no UniProt-supported key gene functions were retrieved** (DEG/function agents). The baseline suggestion of na\u00efve/central-memory T cells is **not directly supported** by the verified evidence packet and therefore cannot be asserted here.\n\nReactome support is limited and indirect: enriched terms include **Ribosome**, **Coronavirus disease**, **Allograft Rejection**, and **Primary immunodeficiency** (pathway agent). These pathways suggest general translational and immune-related activity, but they do **not** provide a definitive lineage call in the absence of validated marker genes. Given the low-confidence DEG verification and low overall confidence (44%), this cluster should be interpreted conservatively as an **[UNCERTAIN] immune/T-cell\u2013like infiltrating population** within primary LUAD.\n\n**Confidence:** Low; the interpretation is heavily hedged because marker-gene validation is sparse and the overall cluster confidence is below threshold.",
+    "orchestration": {
+      "cluster": "0",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Ribosome",
+            "reactome_id": "R-HSA-9954714",
+            "exact_name": "PELO:HBS1L and ABCE1 dissociate a <span class=\"highlighting\" >ribosome</span> on a non-stop mRNA",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9954714"
+          },
+          {
+            "query_name": "Coronavirus disease",
+            "reactome_id": "R-HSA-1643685",
+            "exact_name": "<span class=\"highlighting\" >Disease</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-1643685"
+          },
+          {
+            "query_name": "Allograft Rejection",
+            "reactome_id": "R-HSA-379724",
+            "exact_name": "tRNA Aminoacylation",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-379724"
+          },
+          {
+            "query_name": "Primary immunodeficiency",
+            "reactome_id": "R-HSA-5603027",
+            "exact_name": "IKBKG deficiency causes anhidrotic ectodermal dysplasia with <span class=\"highlighting\" >immunodeficiency</span> (EDA-ID) (via TLR)",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-5603027"
+          },
+          {
+            "query_name": "Hematopoietic cell lineage",
+            "reactome_id": "R-HSA-9925563",
+            "exact_name": "Developmental <span class=\"highlighting\" >Lineage</span> of Pancreatic Ductal Cells",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9925563"
+          }
+        ],
+        "luad_drivers": [
+          "CD3D",
+          "CD3E"
+        ],
+        "driver_note": "Contains known LUAD-relevant genes: CD3D, CD3E",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "1",
+    "n_cells": 500,
+    "top_degs": [
+      "CD8A",
+      "NKG7",
+      "CCL5",
+      "CD8B",
+      "GZMA",
+      "GZMH",
+      "GZMK",
+      "CD3D",
+      "GZMB",
+      "CST7",
+      "CTSW",
+      "LAG3",
+      "IL32",
+      "B2M",
+      "TRAC",
+      "CCL4",
+      "ZNF683",
+      "HLA-A",
+      "HLA-C",
+      "CXCR4"
+    ],
+    "top_pathways_str": "Allograft Rejection; Graft-versus-host disease; Allograft rejection; Primary immunodeficiency; Type I diabetes mellitus",
+    "gpt4o_naive": "Cluster 1 is most consistent with **CD8+ cytotoxic T lymphocytes**, likely an **activated/exhaustion-leaning effector population**. This is supported by **CD8A/CD8B, CD3D, TRAC** (T-cell identity) together with strong cytotoxic genes **NKG7, GZMB, GZMH, GZMK, GZMA, CTSW, CST7, CCL4, CCL5**. **LAG3** suggests chronic antigen stimulation and possible early or partial T-cell dysfunction/exhaustion, while **ZNF683** may indicate a tissue-resident or activated cytotoxic program, though that cannot be concluded with certainty from this list alone.\n\nThe dominant active processes are **T-cell receptor-associated effector function**, **granule-mediated cytotoxicity**, **chemokine production/recruitment**, and **immune activation under antigen presentation context** (consistent with **B2M, HLA-A, HLA-C** expression). **CXCR4** may reflect migratory or tissue-retention behavior.\n\nIn the LUAD tumor microenvironment, these cells likely contribute to **anti-tumor immunity** by recognizing and killing malignant cells. However, **LAG3** implies that despite cytotoxic potential, they may be experiencing **tumor-induced inhibitory signaling**, which could limit full tumor control.",
+    "versionB_narrative": "Cluster 1 most likely represents a **non-malignant immune population rather than a tumor epithelial compartment** [Agent evidence summary]. This interpretation is grounded primarily in the detection of **CD3D** and **CD8A**, which are the only reported LUAD-relevant driver genes in this cluster and are more consistent with a T-cell lineage signal than with canonical LUAD tumor-cell programs [Agent: LUAD driver gene detection]. The **0% LUAD pathway relevance score** further supports the possibility that this cluster is not a cancer-cell state [Agent: LUAD pathway relevance].\n\nPathway enrichment is limited and should be interpreted cautiously. The reported Reactome terms include **Allograft Rejection**, **Graft-versus-host disease**, and **Primary immunodeficiency**-related entries [Agent: Reactome pathways]. Collectively, these terms are compatible with an **immune-associated transcriptional program** rather than a lung epithelial or proliferative tumor program [Agent: Reactome pathways]. However, because **no verified DEGs** or confirmed gene-function annotations were retrieved, finer assignment is not well supported by the current evidence packet [Agent: DEG verification; Agent: UniProt functions].\n\n[UNCERTAIN] Cluster 1 may correspond specifically to a **CD8-positive T-cell subset**, based on **CD8A** together with **CD3D** [Agent: LUAD driver gene detection]. [UNCERTAIN] Functional states such as cytotoxicity, activation, or exhaustion cannot be concluded here because the supporting markers listed in the baseline interpretation were **not verified in the evidence packet**.\n\nConfidence statement: **Low-to-moderate confidence; the available evidence supports an immune/T-cell-like identity, but subtype resolution is limited by absent verified DEGs and low overall confidence.**",
+    "orchestration": {
+      "cluster": "1",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Allograft Rejection",
+            "reactome_id": "R-HSA-379724",
+            "exact_name": "tRNA Aminoacylation",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-379724"
+          },
+          {
+            "query_name": "Graft-versus-host disease",
+            "reactome_id": "R-HSA-1643685",
+            "exact_name": "<span class=\"highlighting\" >Disease</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-1643685"
+          },
+          {
+            "query_name": "Allograft rejection",
+            "reactome_id": "R-HSA-379724",
+            "exact_name": "tRNA Aminoacylation",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-379724"
+          },
+          {
+            "query_name": "Primary immunodeficiency",
+            "reactome_id": "R-HSA-5603027",
+            "exact_name": "IKBKG deficiency causes anhidrotic ectodermal dysplasia with <span class=\"highlighting\" >immunodeficiency</span> (EDA-ID) (via TLR)",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-5603027"
+          },
+          {
+            "query_name": "Type I diabetes mellitus",
+            "reactome_id": "R-HSA-5619073",
+            "exact_name": "Defective GCK causes maturity-onset <span class=\"highlighting\" >diabetes</span> of the young 2 (MODY2)",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-5619073"
+          }
+        ],
+        "luad_drivers": [
+          "CD3D",
+          "CD8A"
+        ],
+        "driver_note": "Contains known LUAD-relevant genes: CD3D, CD8A",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "2",
+    "n_cells": 500,
+    "top_degs": [
+      "CD14",
+      "MS4A6A",
+      "GPNMB",
+      "TREM2",
+      "PLA2G7",
+      "LILRB4",
+      "C1QC",
+      "FPR3",
+      "CD68",
+      "AIF1",
+      "MS4A7",
+      "CD163",
+      "MS4A4A",
+      "FCGR3A",
+      "SLCO2B1",
+      "MSR1",
+      "CYBB",
+      "NPL",
+      "FCGR2A",
+      "IGSF6"
+    ],
+    "top_pathways_str": "Staphylococcus aureus infection; Phagosome; Osteoclast differentiation; Complement and coagulation cascades; Pertussis",
+    "gpt4o_naive": "Cluster 2 is most consistent with **tumor-associated macrophages (TAMs)**, likely a **monocyte-derived, lipid/phagocytic macrophage state**. This is supported by canonical myeloid/macrophage markers (**CD14, CD68, FCGR2A, FCGR3A, AIF1, MS4A7**) together with **TREM2, GPNMB, C1QC, CD163, MSR1, LILRB4**, which are often seen in immunoregulatory macrophages in tumors.\n\nThe dominant programs appear to include **phagocytosis and scavenger receptor activity** (**MSR1, CD68, FCGR2A/FCGR3A**), **complement-related functions** (**C1QC**), **innate immune sensing / myeloid activation** (**FPR3, CYBB, PLA2G7**), and likely **lipid handling / tissue-remodeling** features associated with **TREM2-GPNMB-CD163** macrophages. **LILRB4** also suggests an inhibitory or suppressive myeloid phenotype. I would be cautious about assigning a strict M1/M2 label, since these genes support a mixed but clearly macrophage-enriched state.\n\nIn the LUAD tumor microenvironment, these cells likely contribute to **clearance of debris**, **remodeling of damaged tissue**, and **immune suppression or dampening of anti-tumor immunity**, potentially supporting tumor persistence and progression.",
+    "versionB_narrative": "Cluster 2 is most consistent with [UNCERTAIN] a myeloid/mononuclear phagocyte population, potentially [UNCERTAIN] tumor-associated macrophages, but this assignment is weakly supported because no verified DEGs or UniProt-confirmed marker functions were retrieved (agent evidence summary). The strongest direct evidence is the presence of the LUAD-relevant genes **CD163** and **CD68** in this cluster (driver-gene agent), which are compatible with [UNCERTAIN] a macrophage-lineage identity, although the packet does not provide validated differential expression statistics for them.  \n\nPathway-level evidence also points toward immune/phagocyte-associated activity rather than an epithelial tumor program. Confirmed Reactome terms include **phagosome-related biology** (\u201cBlockage of phagosome acidification\u201d), **Toll-like receptor cascades**, **HCMV infection**, and **differentiation of T cells** (pathway agent). Together, these suggest [UNCERTAIN] an immune-interacting, innate-response state with phagocytic features rather than a canonical LUAD malignant compartment. This interpretation is further supported by the **0% LUAD pathway relevance score** and the explicit uncertainty flag that the cluster \u201cmay be non-cancer cell type\u201d (LUAD relevance/uncertainty agent).  \n\nNo conflicts were detected across agents, but the evidence packet explicitly flags **low DEG verification confidence** and **overall confidence below threshold**, so any finer annotation such as macrophage subtype, activation state, or tumor-association should be considered provisional.  \n\n**Confidence:** Low; this cluster is best described as [UNCERTAIN] an immune/phagocytic cell population, possibly macrophage-like, based on limited and indirect evidence.",
+    "orchestration": {
+      "cluster": "2",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Staphylococcus aureus infection",
+            "reactome_id": "R-HSA-9609646",
+            "exact_name": "HCMV <span class=\"highlighting\" >Infection</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9609646"
+          },
+          {
+            "query_name": "Phagosome",
+            "reactome_id": "R-HSA-9636467",
+            "exact_name": "Blockage of <span class=\"highlighting\" >phagosome</span> acidification",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9636467"
+          },
+          {
+            "query_name": "Osteoclast differentiation",
+            "reactome_id": "R-HSA-9945266",
+            "exact_name": "<span class=\"highlighting\" >Differentiation</span> of T cells",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9945266"
+          },
+          {
+            "query_name": "Complement and coagulation cascades",
+            "reactome_id": "R-HSA-168898",
+            "exact_name": "Toll-like Receptor <span class=\"highlighting\" >Cascades</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-168898"
+          },
+          {
+            "query_name": "Pertussis",
+            "reactome_id": "R-HSA-418597",
+            "exact_name": "G alpha (z) signalling events",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-418597"
+          }
+        ],
+        "luad_drivers": [
+          "CD163",
+          "CD68"
+        ],
+        "driver_note": "Contains known LUAD-relevant genes: CD163, CD68",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "3",
+    "n_cells": 500,
+    "top_degs": [
+      "MS4A1",
+      "CD79A",
+      "VPREB3",
+      "TNFRSF13C",
+      "BANK1",
+      "FCRLA",
+      "RP5-887A10.1",
+      "LINC00926",
+      "LY9",
+      "BLK",
+      "TNFRSF13B",
+      "CD19",
+      "CD37",
+      "CD79B",
+      "SPIB",
+      "IGHD",
+      "ADAM28",
+      "RPS23",
+      "RP11-231C14.7",
+      "RPLP2"
+    ],
+    "top_pathways_str": "Ribosome; Coronavirus disease; Intestinal immune network for IgA production; Hematopoietic cell lineage; Asthma",
+    "gpt4o_naive": "Cluster 3 is most likely a **B-cell population**, probably **mature/naive-to-follicular B cells** rather than plasma cells. This is supported by canonical B-cell markers **MS4A1 (CD20), CD79A, CD79B, CD19, CD37, BANK1, BLK, SPIB, LY9**, and the B-cell survival receptor **TNFRSF13C (BAFFR)**. **IGHD** is consistent with a relatively non-class-switched, mature B-cell state, while **FCRLA, VPREB3,** and **TNFRSF13B (TACI)** suggest active immunoglobulin-associated programs, though not enough to call these plasma cells.\n\nThe dominant biology appears to be **B-cell receptor (BCR) signaling**, **B-cell activation/maturation**, and **survival/homeostasis**. The expression of **BAFFR/TACI-related receptors** suggests responsiveness to B-cell trophic signals in the microenvironment. I do not see strong evidence here for a germinal-center B cell or antibody-secreting plasma cell program.\n\nIn the LUAD tumor microenvironment, these cells may contribute to **antigen presentation, local humoral immune responses, and organization of tertiary lymphoid structure-like niches**. Depending on context, tumor-associated B cells can support anti-tumor immunity, but this gene set alone does not establish whether this cluster is definitively pro- or anti-tumor.",
+    "versionB_narrative": "Cluster 3 (500 cells) cannot be assigned confidently on the basis of the validated evidence packet. No verified differentially expressed genes were recovered, and no UniProt-supported marker functions were available (agent summary). Accordingly, any cell-type label remains [UNCERTAIN]. The low overall confidence (44%), low DEG verification confidence, and 0% LUAD pathway relevance all argue for a cautious interpretation and raise the possibility that this cluster represents a non-malignant compartment rather than a tumor-intrinsic LUAD state (agent summary).\n\nPathway-level evidence is also limited and not cell-type specific. The only confirmed Reactome signal was enrichment for a ribosome quality-control process, specifically \u201cPELO:HBS1L and ABCE1 dissociate a ribosome on a non-stop mRNA,\u201d which suggests [UNCERTAIN] translational or ribosome-rescue activity in this cluster (Reactome agent). The other reported pathway hits (\u201cCoronavirus disease,\u201d \u201cIntestinal immune network for IgA production,\u201d and \u201cHematopoietic cell lineage\u201d) appear generic or mismatched to lung tumor biology in this context and should not be over-interpreted as lineage-defining evidence (Reactome agent). No conflicts were flagged by the agents.\n\nImportantly, no canonical LUAD driver genes were detected among the top DEGs, and the packet explicitly notes no LUAD-relevant driver signal (driver-gene agent). Therefore, Cluster 3 is best described as an [UNCERTAIN] low-confidence, non-driver-defined cell population with weak, nonspecific pathway support rather than a clearly resolved LUAD malignant subtype.\n\nConfidence statement: Overall confidence in this interpretation is low because it is constrained by absent verified marker genes and nonspecific pathway evidence.",
+    "orchestration": {
+      "cluster": "3",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Ribosome",
+            "reactome_id": "R-HSA-9954714",
+            "exact_name": "PELO:HBS1L and ABCE1 dissociate a <span class=\"highlighting\" >ribosome</span> on a non-stop mRNA",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9954714"
+          },
+          {
+            "query_name": "Coronavirus disease",
+            "reactome_id": "R-HSA-1643685",
+            "exact_name": "<span class=\"highlighting\" >Disease</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-1643685"
+          },
+          {
+            "query_name": "Intestinal immune network for IgA production",
+            "reactome_id": "R-HSA-8963676",
+            "exact_name": "<span class=\"highlighting\" >Intestinal</span> absorption",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-8963676"
+          },
+          {
+            "query_name": "Hematopoietic cell lineage",
+            "reactome_id": "R-HSA-9925563",
+            "exact_name": "Developmental <span class=\"highlighting\" >Lineage</span> of Pancreatic Ductal Cells",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9925563"
+          },
+          {
+            "query_name": "Asthma",
+            "reactome_id": "R-HSA-2454202",
+            "exact_name": "Fc epsilon receptor (FCERI) signaling",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-2454202"
+          }
+        ],
+        "luad_drivers": [],
+        "driver_note": "No canonical LUAD driver genes in top DEGs",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "4",
+    "n_cells": 500,
+    "top_degs": [
+      "TIGIT",
+      "AC133644.2",
+      "TNFRSF18",
+      "TNFRSF4",
+      "FOXP3",
+      "LAIR2",
+      "CTLA4",
+      "BATF",
+      "AC017002.1",
+      "TRAC",
+      "IL2RA",
+      "LINC01281",
+      "IL32",
+      "SPOCK2",
+      "DUSP4",
+      "CD27",
+      "CD2",
+      "SIRPG",
+      "CD3D",
+      "HLA-A"
+    ],
+    "top_pathways_str": "Primary immunodeficiency; Allograft Rejection; Th17 cell differentiation; Th1 and Th2 cell differentiation; T cell receptor signaling pathway",
+    "gpt4o_naive": "Cluster 4 is most consistent with **regulatory T cells (Tregs), likely an activated/tumor-infiltrating Treg state**. This is supported by **FOXP3, IL2RA (CD25), CTLA4, TIGIT, TNFRSF18 (GITR), and TNFRSF4 (OX40)**, together with core T-cell markers (**TRAC, CD3D, CD2, CD27, SIRPG**). The combination of **FOXP3 + IL2RA + CTLA4 + TIGIT** strongly favors a suppressive Treg identity rather than conventional activated T cells.\n\nThe dominant biology appears to involve **T-cell receptor activation**, **immune checkpoint signaling**, and **Treg activation/survival programs**. **BATF** and **DUSP4** are consistent with activated T-cell transcriptional regulation, while **CTLA4, TIGIT, GITR, and OX40** suggest active immunoregulatory signaling. **HLA-A** likely reflects general antigen-presentation machinery rather than defining the cluster. Some genes here (for example certain lncRNAs) are less interpretable.\n\nIn the LUAD tumor microenvironment, these cells likely contribute to **local immunosuppression**, restraining effector T-cell activity and potentially supporting **tumor immune evasion**. Their checkpoint-rich phenotype may also be relevant to **response or resistance to immunotherapy**.",
+    "versionB_narrative": "Cluster 4 is [UNCERTAIN] most consistent with a **T-cell lineage population**, with [UNCERTAIN] possible **regulatory T-cell (Treg)-like features**. This interpretation is necessarily cautious because **no verified DEGs were recovered** and the evidence packet explicitly flags **low DEG verification confidence** and **overall confidence below threshold** (agent summary/uncertainty flags).\n\nThe strongest direct evidence is pathway-level: Reactome terms include **\u201cDifferentiation of T cells\u201d** from both **Th17 cell differentiation** and **Th1/Th2 cell differentiation** analyses, supporting a T-cell-associated identity (Reactome agent). In addition, the cluster contains the LUAD-relevant genes **CD3D, CTLA4, and FOXP3** (driver-gene agent). Among these, **CD3D** is compatible with T-cell identity, while the co-detection of **CTLA4** and **FOXP3** is [UNCERTAIN] suggestive of a **Treg-like immunoregulatory program** rather than a malignant epithelial state; however, this specific Treg assignment is not directly validated by confirmed DEGs in the packet and should therefore remain provisional.\n\nThe evidence also indicates **low direct LUAD pathway relevance (0%)**, which supports the possibility that this cluster represents a **non-cancer immune compartment** rather than tumor cells (LUAD relevance agent). No conflict flags were reported, so there is no explicit contradictory annotation in the current evidence packet.\n\n**Confidence:** Low-to-moderate confidence that Cluster 4 is a T-cell population, with low confidence for a specific Treg designation.",
+    "orchestration": {
+      "cluster": "4",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Primary immunodeficiency",
+            "reactome_id": "R-HSA-5603027",
+            "exact_name": "IKBKG deficiency causes anhidrotic ectodermal dysplasia with <span class=\"highlighting\" >immunodeficiency</span> (EDA-ID) (via TLR)",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-5603027"
+          },
+          {
+            "query_name": "Allograft Rejection",
+            "reactome_id": "R-HSA-379724",
+            "exact_name": "tRNA Aminoacylation",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-379724"
+          },
+          {
+            "query_name": "Th17 cell differentiation",
+            "reactome_id": "R-HSA-9945266",
+            "exact_name": "<span class=\"highlighting\" >Differentiation</span> of T cells",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9945266"
+          },
+          {
+            "query_name": "Th1 and Th2 cell differentiation",
+            "reactome_id": "R-HSA-9945266",
+            "exact_name": "<span class=\"highlighting\" >Differentiation</span> of T cells",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9945266"
+          },
+          {
+            "query_name": "T cell receptor signaling pathway",
+            "reactome_id": "R-HSA-983705",
+            "exact_name": "<span class=\"highlighting\" >Signaling</span> by the B <span class=\"highlighting\" >Cell</span> <span class=\"highlighting\" >Receptor</span> (BCR)",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-983705"
+          }
+        ],
+        "luad_drivers": [
+          "CD3D",
+          "CTLA4",
+          "FOXP3"
+        ],
+        "driver_note": "Contains known LUAD-relevant genes: CD3D, CTLA4, FOXP3",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "5",
+    "n_cells": 500,
+    "top_degs": [
+      "FGFBP2",
+      "KLRD1",
+      "TRDC",
+      "KLRF1",
+      "GNLY",
+      "NKG7",
+      "GZMB",
+      "PRF1",
+      "CTSW",
+      "GZMH",
+      "S1PR5",
+      "CST7",
+      "CD160",
+      "GZMA",
+      "CCL5",
+      "SH2D1B",
+      "FCRL6",
+      "XCL2",
+      "MATK",
+      "CD247"
+    ],
+    "top_pathways_str": "Graft-versus-host disease; Natural killer cell mediated cytotoxicity; Antigen processing and presentation; Allograft Rejection; Allograft rejection",
+    "gpt4o_naive": "Cluster 5 is most consistent with **cytotoxic lymphocytes, most likely NK cells with possible \u03b3\u03b4 T-cell features**. This is supported by **FGFBP2, KLRD1, KLRF1, NKG7, GNLY, PRF1, GZMB, GZMH, CTSW, CST7, CD160, FCRL6, SH2D1B, and S1PR5**, which are characteristic of highly cytotoxic NK-cell programs. **TRDC** suggests that some cells may be **\u03b3\u03b4 T cells** or an NK-like \u03b3\u03b4 T-cell state, so the cluster may not be purely conventional NK cells.\n\nThe dominant biology is **lymphocyte-mediated cytotoxicity**: **perforin/granzyme-dependent target-cell killing** (PRF1, GZMB, GZMH, GZMA), **NK receptor signaling** (KLRD1, KLRF1, CD160, CD247), and **effector chemokine production / immune cell recruitment** (CCL5, XCL2). Overall, this looks like an **activated killer-cell program** rather than a proliferative or exhausted state.\n\nIn the LUAD tumor microenvironment, these cells likely contribute to **anti-tumor immune surveillance and direct killing of malignant cells**. However, without additional markers, I cannot determine whether they are fully functional, partially suppressed, or enriched for tissue-resident versus circulating cytotoxic cells.",
+    "versionB_narrative": "Cluster 5 most likely represents an [UNCERTAIN] immune-associated, non-malignant population rather than LUAD tumor cells. This interpretation is based on the evidence packet showing no verified DEGs and no detected canonical LUAD driver genes (driver-gene agent), together with a LUAD pathway relevance score of 0% (LUAD relevance agent). The absence of LUAD drivers argues against a clearly defined malignant epithelial cluster in this dataset context (driver-gene agent).\n\nPathway evidence points toward [UNCERTAIN] antigen presentation and cytotoxic immune activity. Specifically, Reactome terms include **Antigen processing and presentation / cross-presentation**, **Graft-versus-host disease**, **Allograft rejection**, and **Natural killer cell mediated cytotoxicity** (pathway agent). These enrichments are more compatible with an immune cell compartment than with a canonical LUAD tumor-cell program (pathway agent; LUAD relevance agent). However, because no UniProt-confirmed DEGs or gene-function annotations were retrieved, the precise immune identity cannot be resolved from the validated evidence alone (DEG verification agent; UniProt function agent).\n\nNo canonical LUAD driver genes were present among the top DEGs, and no conflict flags were reported (driver-gene agent; conflict assessment). Given the low DEG verification confidence, low LUAD relevance, and overall confidence of 44%, any assignment beyond a broad [UNCERTAIN] immune-cell interpretation should be treated cautiously.\n\n**Confidence:** Low-to-moderate confidence that Cluster 5 is an [UNCERTAIN] immune, likely non-tumor population, but low confidence in a more specific cell-type label.",
+    "orchestration": {
+      "cluster": "5",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Graft-versus-host disease",
+            "reactome_id": "R-HSA-1643685",
+            "exact_name": "<span class=\"highlighting\" >Disease</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-1643685"
+          },
+          {
+            "query_name": "Natural killer cell mediated cytotoxicity",
+            "reactome_id": "R-HSA-5218921",
+            "exact_name": "VEGFR2 <span class=\"highlighting\" >mediated</span> <span class=\"highlighting\" >cell</span> proliferation",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-5218921"
+          },
+          {
+            "query_name": "Antigen processing and presentation",
+            "reactome_id": "R-HSA-1236975",
+            "exact_name": "<span class=\"highlighting\" >Antigen</span> <span class=\"highlighting\" >processing</span>-Cross <span class=\"highlighting\" >presentation</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-1236975"
+          },
+          {
+            "query_name": "Allograft Rejection",
+            "reactome_id": "R-HSA-379724",
+            "exact_name": "tRNA Aminoacylation",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-379724"
+          },
+          {
+            "query_name": "Allograft rejection",
+            "reactome_id": "R-HSA-379724",
+            "exact_name": "tRNA Aminoacylation",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-379724"
+          }
+        ],
+        "luad_drivers": [],
+        "driver_note": "No canonical LUAD driver genes in top DEGs",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "6",
+    "n_cells": 500,
+    "top_degs": [
+      "PPP1R1B",
+      "AQP5",
+      "HOXD1",
+      "ARNT2",
+      "TMPRSS4",
+      "CHI3L1",
+      "SLC22A31",
+      "TFPI2",
+      "SFTA1P",
+      "HHLA2",
+      "CLDN10",
+      "AGR3",
+      "PDE4C",
+      "TFPI",
+      "C16orf89",
+      "PLA2G10",
+      "CEACAM6",
+      "LMO3",
+      "SFTPD",
+      "MMP28"
+    ],
+    "top_pathways_str": "",
+    "gpt4o_naive": "Cluster 6 most likely represents a **malignant epithelial/alveolar-like LUAD cell state**, probably with features of **distal airway/alveolar differentiation**. This is supported by **AQP5, SFTPD, SFTA1P, PLA2G10, and CLDN10**, which are associated with lung epithelial/alveolar programs, together with **CEACAM6, TMPRSS4, AGR3, and MMP28**, which are often seen in LUAD epithelial tumor cells. The presence of **HHLA2** also suggests a tumor-associated epithelial program with possible immune modulatory capacity.\n\nKey active processes likely include **epithelial differentiation and barrier/surface secretory functions** (AQP5, CLDN10, SFTPD), **surfactant/lipid-associated lung epithelial biology** (SFTPD, PLA2G10), and **tumor invasion/remodeling programs** (TMPRSS4, MMP28, TFPI2). **CHI3L1** may indicate a stress, remodeling, or inflammatory-associated state, although its exact role here is uncertain. **TFPI/TFPI2** may reflect altered extracellular protease/coagulation-related regulation.\n\nIn the LUAD microenvironment, these cells likely act as a **tumor epithelial compartment** that retains partial alveolar identity while promoting **matrix remodeling, local invasion, and possibly immune interaction/evasion**, rather than representing stromal or immune cells.",
+    "versionB_narrative": "Cluster 6 (500 cells) cannot be assigned a confident biological identity from the current evidence packet. The strongest evidence is actually the absence of validated molecular support: no differentially expressed genes were UniProt-confirmed, no key gene functions were retrieved, and no Reactome pathways were confirmed (Agent summary/evidence packet). In addition, no canonical LUAD driver genes were detected among the top DEGs, and the LUAD pathway relevance score was 0% (Agent summary/evidence packet). Together, these findings argue against making a strong claim that this cluster represents a canonical LUAD malignant program.\n\n[UNCERTAIN] Because direct LUAD pathway relevance is low and the packet explicitly notes that this cluster \u201cmay be non-cancer cell type,\u201d Cluster 6 could represent a non-malignant population rather than tumor epithelial cells (Agent summary/evidence packet). [UNCERTAIN] The baseline suggestion of an alveolar-like or malignant epithelial LUAD state is not supported by the verified evidence provided here, because none of the cited marker genes or pathways were validated in the packet (baseline interpretation versus Agent summary/evidence packet). No conflict flags were reported, but the packet explicitly warns that DEG verification confidence is low, fewer than half of enriched pathways were Reactome-confirmed, and overall confidence is below threshold; these limitations should be acknowledged directly (Agent summary/evidence packet).\n\nNo LUAD driver genes were present in this cluster (Agent summary/evidence packet). Confidence: very low, because the interpretation is constrained by absent validated markers/pathways and an overall confidence of 9%.",
+    "orchestration": {
+      "cluster": "6",
+      "overall_confidence": 0.09,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 0.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Fewer than half of enriched pathways confirmed in Reactome",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [],
+        "luad_drivers": [],
+        "driver_note": "No canonical LUAD driver genes in top DEGs",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "7",
+    "n_cells": 500,
+    "top_degs": [
+      "VSTM2L",
+      "MUC4",
+      "KRT17",
+      "CLDN3",
+      "KRT7",
+      "FAM83A",
+      "MUC16",
+      "CRABP2",
+      "MEX3A",
+      "S100A2",
+      "DSP",
+      "LCN2",
+      "PLPP2",
+      "MAL2",
+      "KRT19",
+      "MMP7",
+      "IGFBP3",
+      "ENAH",
+      "EPCAM",
+      "TMC5"
+    ],
+    "top_pathways_str": "Arrhythmogenic right ventricular cardiomyopathy; Estrogen Response Late; Staphylococcus aureus infection; Estrogen Response Early; Glycolysis",
+    "gpt4o_naive": "Cluster 7 most likely represents **malignant epithelial tumor cells** with a **highly epithelial, mucinous/secretory and partially basal-like program**. This is supported by strong epithelial markers (**EPCAM, KRT7, KRT19, CLDN3, DSP, MAL2**) together with LUAD-associated epithelial/tumor genes (**MUC4, MUC16, FAM83A, KRT17, MMP7, IGFBP3, LCN2**). The combination of **KRT17, S100A2, CRABP2, MMP7, ENAH** suggests a stressed, remodeling, and potentially more invasive epithelial state rather than normal alveolar epithelium.\n\nKey active processes likely include **epithelial differentiation and junctional organization** (**CLDN3, DSP, EPCAM**), **mucin production/secretory activity** (**MUC4, MUC16**), and **tumor growth/invasion-associated programs** (**FAM83A, MMP7, ENAH, IGFBP3, LCN2**). **MEX3A** may indicate a progenitor-like or less differentiated component, though this is less certain from this list alone.\n\nIn the LUAD tumor microenvironment, these cells likely constitute a **tumor epithelial compartment** that contributes to **barrier formation, extracellular matrix remodeling, and invasive behavior**, and may help shape a **pro-tumor niche** through secreted factors and altered epithelial surface molecules.",
+    "versionB_narrative": "Cluster 7 is most cautiously interpreted as an **epithelial-associated population**, based on detection of the LUAD-relevant genes **EPCAM** and **KRT19** in this cluster (driver-gene agent). Because **no verified differentially expressed genes** were confirmed and **no UniProt-supported gene-function annotations** were retrieved, finer cell-state assignment is not directly supported by the evidence packet (DEG/function agents).  \n\nThe presence of **EPCAM** and **KRT19** is consistent with an epithelial identity, and these genes are also flagged here as **LUAD-relevant driver genes** (driver-gene agent). However, the packet also reports **0% LUAD pathway relevance** and explicitly warns that this cluster **may be a non-cancer cell type**, so a malignant interpretation cannot be made confidently from the current evidence alone (LUAD pathway agent; uncertainty flags).  \n\nReactome hits included **Estrogen biosynthesis**, **HCMV Infection**, and an **ABCC9-related disease pathway** (pathway agent), but because these pathway assignments are not linked here to verified DEGs, their biological meaning for Cluster 7 remains **[UNCERTAIN]**. No conflict flags were detected, but the evidence base is sparse and the overall confidence is only **44%**, so this cluster should be described conservatively (metadata/uncertainty flags).  \n\nOverall, Cluster 7 is best reported as an **[UNCERTAIN] EPCAM+/KRT19+ epithelial-like cluster**, with **[UNCERTAIN] malignant relevance** in LUAD.  \n\n**Confidence:** Low, because the interpretation relies mainly on two detected LUAD-relevant epithelial genes without verified DEGs or strong pathway support.",
+    "orchestration": {
+      "cluster": "7",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Arrhythmogenic right ventricular cardiomyopathy",
+            "reactome_id": "R-HSA-5678420",
+            "exact_name": "Defective ABCC9 causes CMD10, ATFB12 and Cantu syndrome",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-5678420"
+          },
+          {
+            "query_name": "Estrogen Response Late",
+            "reactome_id": "R-HSA-193144",
+            "exact_name": "<span class=\"highlighting\" >Estrogen</span> biosynthesis",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-193144"
+          },
+          {
+            "query_name": "Staphylococcus aureus infection",
+            "reactome_id": "R-HSA-9609646",
+            "exact_name": "HCMV <span class=\"highlighting\" >Infection</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9609646"
+          },
+          {
+            "query_name": "Estrogen Response Early",
+            "reactome_id": "R-HSA-193144",
+            "exact_name": "<span class=\"highlighting\" >Estrogen</span> biosynthesis",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-193144"
+          },
+          {
+            "query_name": "Glycolysis",
+            "reactome_id": "R-HSA-70171",
+            "exact_name": "<span class=\"highlighting\" >Glycolysis</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-70171"
+          }
+        ],
+        "luad_drivers": [
+          "EPCAM",
+          "KRT19"
+        ],
+        "driver_note": "Contains known LUAD-relevant genes: EPCAM, KRT19",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "8",
+    "n_cells": 500,
+    "top_degs": [
+      "MS4A2",
+      "CPA3",
+      "RP11-354E11.2",
+      "TPSAB1",
+      "SLC18A2",
+      "GATA2",
+      "RGS13",
+      "C1orf186",
+      "IL1RL1",
+      "HDC",
+      "HPGDS",
+      "KIT",
+      "GCSAML",
+      "TPSB2",
+      "VWA5A",
+      "CALB2",
+      "MAOB",
+      "CTSG",
+      "LTC4S",
+      "SVOPL"
+    ],
+    "top_pathways_str": "Renin-angiotensin system; Asthma; Histidine metabolism; Arachidonic acid metabolism; Fc epsilon RI signaling pathway",
+    "gpt4o_naive": "Cluster 8 is most consistent with **mast cells**, likely a **mature/activated mast cell state**. This is strongly supported by canonical mast cell markers **MS4A2** (Fc\u03b5RI \u03b2 chain), **CPA3**, **TPSAB1**, **TPSB2**, **KIT**, **HDC**, **HPGDS**, **LTC4S**, and **IL1RL1 (ST2)**. **GATA2** also fits mast cell lineage identity and maintenance.\n\nThe dominant biology is **IgE/Fc\u03b5RI-associated activation**, **granule storage/release**, and **lipid mediator synthesis**. The proteases **TPSAB1/TPSB2/CTSG/CPA3** indicate secretory granules; **HDC** supports histamine production; **HPGDS** and **LTC4S** suggest eicosanoid/leukotriene metabolism; **IL1RL1** implies responsiveness to alarmin signaling such as IL-33. Together, this points to cells specialized for rapid inflammatory mediator release and immune modulation.\n\nIn the LUAD tumor microenvironment, mast cells may contribute to **local inflammation**, **vascular remodeling/permeability**, and **recruitment or modulation of other immune cells**. Depending on context, tumor-associated mast cells can be either pro- or anti-tumor. From this marker set alone, a more specific functional polarization cannot be stated with confidence.",
+    "versionB_narrative": "Cluster 8 most likely represents a **non-malignant immune-associated population**, but the exact cell identity is **[UNCERTAIN]** because no verified DEGs or UniProt-confirmed marker genes were recovered in the evidence packet (Agent 1/2), and the overall confidence is only 44% with an explicit low-DEG-confidence warning (Agent 3). The strongest direct signal is pathway-level: Reactome enrichment includes **Immune System** via the renin-angiotensin system and **Fc epsilon receptor (FCERI) signaling** in the asthma pathway (Agent 3). This pattern is **[UNCERTAIN]** but compatible with an **allergy/Fc\u03b5RI-linked immune cell state**, potentially including mast-cell-like biology; however, that specific assignment is **not directly supported by verified marker genes in the packet** and should therefore be treated cautiously.\n\nAdditional enriched terms include **histidine catabolism** and **sialic acid metabolism** (Agent 3). These pathways suggest **[UNCERTAIN]** specialized metabolic activity within an immune context, but they do not by themselves establish lineage. Importantly, **no canonical LUAD driver genes were detected among the top DEGs** (Agent 3), and the LUAD pathway relevance score was **0%** (Agent 3), arguing against this cluster being a tumor-cell compartment. No conflicts were flagged across agents (Agent 3).\n\nOverall, Cluster 8 is best described as an **[UNCERTAIN] Fc\u03b5RI-associated immune cell cluster, likely non-tumor**, pending stronger marker-gene validation. **Confidence: low to moderate, limited primarily by absent verified DEGs and low overall cluster confidence.**",
+    "orchestration": {
+      "cluster": "8",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Renin-angiotensin system",
+            "reactome_id": "R-HSA-168256",
+            "exact_name": "Immune <span class=\"highlighting\" >System</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-168256"
+          },
+          {
+            "query_name": "Asthma",
+            "reactome_id": "R-HSA-2454202",
+            "exact_name": "Fc epsilon receptor (FCERI) signaling",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-2454202"
+          },
+          {
+            "query_name": "Histidine metabolism",
+            "reactome_id": "R-HSA-70921",
+            "exact_name": "<span class=\"highlighting\" >Histidine</span> catabolism",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-70921"
+          },
+          {
+            "query_name": "Arachidonic acid metabolism",
+            "reactome_id": "R-HSA-4085001",
+            "exact_name": "Sialic <span class=\"highlighting\" >acid</span> <span class=\"highlighting\" >metabolism</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-4085001"
+          },
+          {
+            "query_name": "Fc epsilon RI signaling pathway",
+            "reactome_id": "R-HSA-2454202",
+            "exact_name": "<span class=\"highlighting\" >Fc</span> <span class=\"highlighting\" >epsilon</span> receptor (FCERI) <span class=\"highlighting\" >signaling</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-2454202"
+          }
+        ],
+        "luad_drivers": [],
+        "driver_note": "No canonical LUAD driver genes in top DEGs",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "9",
+    "n_cells": 500,
+    "top_degs": [
+      "GPD1",
+      "RP5-839B4.8",
+      "PCOLCE2",
+      "FABP4",
+      "RP11-598F7.3",
+      "MCEMP1",
+      "RETN",
+      "INHBA",
+      "FFAR4",
+      "LPL",
+      "RBP4",
+      "MARCO",
+      "PPARG",
+      "CES1",
+      "VSIG4",
+      "MME",
+      "GPA33",
+      "AGRP",
+      "TNNI2",
+      "TREM1"
+    ],
+    "top_pathways_str": "PPAR signaling pathway; Phagosome; Osteoclast differentiation; Angiogenesis; Staphylococcus aureus infection",
+    "gpt4o_naive": "Cluster 9 most likely represents **tumor-associated alveolar/interstitial macrophages with a lipid-associated, immunoregulatory phenotype**. This is supported by **MARCO, VSIG4, MCEMP1, TREM1, CES1, LPL, FABP4, PPARG, FFAR4, GPD1, and RETN**. **MARCO** and **VSIG4** are characteristic of resident-like macrophages, while **FABP4/LPL/PPARG/FFAR4/CES1/GPD1** indicate strong **lipid uptake, fatty-acid handling, and metabolic remodeling**. **TREM1** and **INHBA** suggest inflammatory activation, although this cluster does not look like a classic highly inflammatory monocyte state. **PCOLCE2** may reflect matrix-related activity, but its precise contribution here is less certain.\n\nFunctionally, these cells likely engage in **lipid metabolism**, **scavenger/phagocytic programs**, and **immune modulation**. In the LUAD tumor microenvironment, they may help clear surfactant/lipid-rich material while also promoting a **pro-tumor macrophage niche** through dampened anti-tumor immunity and support of tissue remodeling. Overall, this cluster is best interpreted as a **metabolically specialized, resident-like TAM population** rather than epithelial or lymphoid cells.",
+    "versionB_narrative": "Cluster 9 is most consistent with an **[UNCERTAIN] immune/stromal, likely non-malignant compartment** rather than a strongly LUAD-programmed tumor cell state. This interpretation is based on three evidence features: **(i)** the only LUAD-relevant detected driver is **MARCO** (driver-gene agent), **(ii)** the **LUAD pathway relevance score is 0%** (LUAD relevance agent), and **(iii)** the uncertainty flags explicitly note **low direct LUAD pathway relevance** and caution that this cluster **may be a non-cancer cell type** (uncertainty agent).\n\nBiologically, the pathway profile suggests **[UNCERTAIN] phagocytic and immune-regulatory activity**. Reactome terms include **\u201cPhagosome \u2192 Blockage of phagosome acidification\u201d** and **\u201cPPAR signaling pathway \u2192 NOD1/2 Signaling Pathway\u201d** (pathway agent), which are compatible with an **[UNCERTAIN] myeloid/macrophage-like functional program**, although no verified DEGs were recovered to confirm lineage. Additional pathway support comes from **\u201cOsteoclast differentiation \u2192 Differentiation of T cells\u201d** and **\u201cAngiogenesis \u2192 Signaling by VEGF\u201d** (pathway agent), indicating **[UNCERTAIN] immune crosstalk and microenvironmental signaling**, but these terms are not cell-type-specific on their own.\n\nBecause **no verified DEGs** or UniProt-confirmed marker functions were retrieved (DEG/function agent), a more specific annotation such as macrophage subtype, endothelial, or tumor state would be over-interpretation. No conflicts were flagged across agents.\n\n**Confidence statement:** Low confidence overall (44%); this cluster is best described conservatively as an **[UNCERTAIN] MARCO-positive, likely non-tumor immune/microenvironmental population** pending stronger marker support.",
+    "orchestration": {
+      "cluster": "9",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "PPAR signaling pathway",
+            "reactome_id": "R-HSA-168638",
+            "exact_name": "NOD1/2 <span class=\"highlighting\" >Signaling</span> <span class=\"highlighting\" >Pathway</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-168638"
+          },
+          {
+            "query_name": "Phagosome",
+            "reactome_id": "R-HSA-9636467",
+            "exact_name": "Blockage of <span class=\"highlighting\" >phagosome</span> acidification",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9636467"
+          },
+          {
+            "query_name": "Osteoclast differentiation",
+            "reactome_id": "R-HSA-9945266",
+            "exact_name": "<span class=\"highlighting\" >Differentiation</span> of T cells",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9945266"
+          },
+          {
+            "query_name": "Angiogenesis",
+            "reactome_id": "R-HSA-194138",
+            "exact_name": "Signaling by VEGF",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-194138"
+          },
+          {
+            "query_name": "Staphylococcus aureus infection",
+            "reactome_id": "R-HSA-9609646",
+            "exact_name": "HCMV <span class=\"highlighting\" >Infection</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9609646"
+          }
+        ],
+        "luad_drivers": [
+          "MARCO"
+        ],
+        "driver_note": "Contains known LUAD-relevant genes: MARCO",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "10",
+    "n_cells": 500,
+    "top_degs": [
+      "CD1E",
+      "CD1C",
+      "CD1A",
+      "PKIB",
+      "LGALS2",
+      "CD1B",
+      "PLD4",
+      "S100B",
+      "FCER1A",
+      "CSF2RA",
+      "CD207",
+      "CLEC10A",
+      "FLT3",
+      "CCL17",
+      "TSPAN33",
+      "LST1",
+      "AIF1",
+      "SPI1",
+      "PPP1R14A",
+      "HCK"
+    ],
+    "top_pathways_str": "Allograft rejection; Asthma; Graft-versus-host disease; Type I diabetes mellitus; Hematopoietic cell lineage",
+    "gpt4o_naive": "Cluster 10 is most consistent with a **conventional dendritic cell population, likely CD1C\u207a/CD1A\u207a antigen-presenting dendritic cells with a Langerhans-like feature set**. This interpretation is supported by **CD1C, CD1A, CD1B, CD1E, FCER1A, FLT3, CLEC10A, and CD207**, which together strongly indicate professional antigen-presenting myeloid cells rather than macrophages or lymphocytes. **SPI1, HCK, AIF1, and LST1** further support a myeloid immune identity.\n\nThe dominant biology appears to involve **antigen uptake, processing, and presentation**, especially lipid/glycolipid antigen presentation through the **CD1 family**. **FCER1A** and **CLEC10A** are consistent with dendritic-cell sensing/capture functions, while **CCL17** suggests potential chemokine-mediated communication with T cells. **FLT3** is also compatible with dendritic-cell differentiation/homeostasis. **CD207** may indicate a specialized migratory or Langerhans-like DC state, though that should be interpreted cautiously.\n\nIn the LUAD tumor microenvironment, these cells likely participate in **tumor antigen presentation and immune orchestration**, potentially shaping **T-cell recruitment/activation**. Depending on context, they could support **anti-tumor immunity**, but may also reflect a **specialized or partially tolerogenic DC program**; the marker list alone does not fully resolve that.",
+    "versionB_narrative": "Cluster 10 cannot be assigned a high-confidence identity from the current evidence packet. The strongest grounded observation is that this cluster shows **very limited validated marker support**, because **no verified DEGs** and **no UniProt-confirmed key gene functions** were retrieved (agent summary). This substantially weakens any specific cell-type annotation.\n\nThe only direct molecular signal available is pathway-level enrichment. Reactome terms include **Fc epsilon receptor (FCERI) signaling** and several disease-labeled immune pathways, including **allograft rejection**, **graft-versus-host disease**, and **type I diabetes mellitus** (Reactome agent). These terms are compatible with an **immune-associated program**, but they are not cell-type-specific in this packet. Therefore, Cluster 10 is best described as **[UNCERTAIN] an immune-lineage or immune-reactive population**, rather than a confidently resolved malignant epithelial state.\n\nWith respect to LUAD biology, **no canonical LUAD driver genes were detected in the top DEGs** and the **LUAD pathway relevance score was 0%** (driver/pathway agent). This argues against a clearly defined LUAD tumor-cell cluster based on the present evidence and is consistent with the packet\u2019s warning that this may represent a **non-cancer cell type** (uncertainty flags). No conflicts were flagged, but the packet explicitly notes **low DEG verification confidence** and **overall confidence below threshold**, so any finer annotation would be speculative.\n\n**Confidence:** Low; this cluster is most defensibly interpreted as [UNCERTAIN] immune-associated/non-malignant, pending stronger marker validation.",
+    "orchestration": {
+      "cluster": "10",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Allograft rejection",
+            "reactome_id": "R-HSA-379724",
+            "exact_name": "tRNA Aminoacylation",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-379724"
+          },
+          {
+            "query_name": "Asthma",
+            "reactome_id": "R-HSA-2454202",
+            "exact_name": "Fc epsilon receptor (FCERI) signaling",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-2454202"
+          },
+          {
+            "query_name": "Graft-versus-host disease",
+            "reactome_id": "R-HSA-1643685",
+            "exact_name": "<span class=\"highlighting\" >Disease</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-1643685"
+          },
+          {
+            "query_name": "Type I diabetes mellitus",
+            "reactome_id": "R-HSA-5619073",
+            "exact_name": "Defective GCK causes maturity-onset <span class=\"highlighting\" >diabetes</span> of the young 2 (MODY2)",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-5619073"
+          },
+          {
+            "query_name": "Hematopoietic cell lineage",
+            "reactome_id": "R-HSA-9925563",
+            "exact_name": "Developmental <span class=\"highlighting\" >Lineage</span> of Pancreatic Ductal Cells",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9925563"
+          }
+        ],
+        "luad_drivers": [],
+        "driver_note": "No canonical LUAD driver genes in top DEGs",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "11",
+    "n_cells": 500,
+    "top_degs": [
+      "MFAP4",
+      "BGN",
+      "EMILIN1",
+      "AEBP1",
+      "PLAC9",
+      "COL6A3",
+      "PRELP",
+      "ISLR",
+      "PCOLCE",
+      "FBLN1",
+      "COL1A2",
+      "COL6A2",
+      "ELN",
+      "MXRA8",
+      "DPT",
+      "SPARCL1",
+      "PRRX1",
+      "THY1",
+      "TCF21",
+      "C7"
+    ],
+    "top_pathways_str": "Epithelial Mesenchymal Transition; Protein digestion and absorption; Angiogenesis; ECM-receptor interaction; Focal adhesion",
+    "gpt4o_naive": "Cluster 11 is most consistent with a **stromal fibroblast population**, likely **matrix-producing adventitial/interstitial fibroblasts** rather than epithelial or immune cells. This is supported by strong expression of **COL1A2, COL6A2, COL6A3, BGN, EMILIN1, FBLN1, PRELP, PCOLCE, DPT, SPARCL1, THY1, PRRX1, and TCF21**, a gene set typical of **extracellular matrix (ECM)-rich mesenchymal cells**. **ELN** and **MFAP4** further suggest connective tissue/elastic fiber organization.  \n\nThe dominant active programs are therefore **ECM production and remodeling**, **collagen fibril/elastic fiber assembly**, and broader **mesenchymal stromal maintenance**. **PCOLCE** is consistent with collagen processing, while **AEBP1** has been associated with activated fibroblast-like stromal states. I am less certain about the specific contribution of **PLAC9** and **MXRA8** here, so those should be interpreted cautiously.  \n\nIn the LUAD tumor microenvironment, these cells likely function as **cancer-associated fibroblast\u2013like stromal cells** that **build and remodel the tumor matrix**, potentially increasing tissue stiffness, shaping tumor architecture, and influencing tumor cell invasion as well as immune-cell trafficking.",
+    "versionB_narrative": "Cluster 11 is [UNCERTAIN] most consistent with a **non-malignant mesenchymal/stromal population**, rather than a canonical LUAD tumor cell state. This interpretation is necessarily cautious because **no verified DEGs were recovered** and DEG verification confidence was explicitly flagged as low (knowledge agents summary; uncertainty flags). In addition, **no canonical LUAD driver genes were detected** in the top markers, and the packet states **low direct LUAD pathway relevance (0%)**, which further argues against a strongly supported malignant epithelial identity (driver-gene/pathway agent).\n\nThe strongest positive evidence comes from the **Reactome pathway profile**, which shows enrichment for **Epithelial-Mesenchymal Transition (EMT) during gastrulation**, **ECM proteoglycans**, **Signaling by VEGF**, and **Digestion and absorption** (pathway agent). Taken together, these pathways support [UNCERTAIN] a cell state linked to **mesenchymal remodeling, extracellular matrix interaction, and angiogenesis-associated stromal functions**, which is compatible with fibroblast-like or other stromal cells. However, because these inferences are based on pathway-level signals without validated marker genes, a more specific assignment such as fibroblast, myofibroblast, or perivascular stromal cell cannot be made confidently.\n\nNo conflicts were flagged by the agents. Overall, Cluster 11 is best described as [UNCERTAIN] a **stromal/mesenchymal-like, likely non-LUAD-driver-positive population** with ECM/EMT/VEGF-associated transcriptional features.\n\n**Confidence:** Low, because the interpretation relies mainly on pathway enrichment in the absence of verified DEGs or LUAD driver support.",
+    "orchestration": {
+      "cluster": "11",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Epithelial Mesenchymal Transition",
+            "reactome_id": "R-HSA-9758919",
+            "exact_name": "<span class=\"highlighting\" >Epithelial</span>-<span class=\"highlighting\" >Mesenchymal</span> <span class=\"highlighting\" >Transition</span> (EMT) during gastrulation",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9758919"
+          },
+          {
+            "query_name": "Protein digestion and absorption",
+            "reactome_id": "R-HSA-8963743",
+            "exact_name": "<span class=\"highlighting\" >Digestion</span> and <span class=\"highlighting\" >absorption</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-8963743"
+          },
+          {
+            "query_name": "Angiogenesis",
+            "reactome_id": "R-HSA-194138",
+            "exact_name": "Signaling by VEGF",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-194138"
+          },
+          {
+            "query_name": "ECM-receptor interaction",
+            "reactome_id": "R-HSA-3000178",
+            "exact_name": "<span class=\"highlighting\" >ECM</span> proteoglycans",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-3000178"
+          },
+          {
+            "query_name": "Focal adhesion",
+            "reactome_id": "R-HSA-9926550",
+            "exact_name": "Regulation of MITF-M-dependent genes involved in extracellular matrix, <span class=\"highlighting\" >focal</span> <span class=\"highlighting\" >adhesion</span> and epithelial-to-mesenchymal transition",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9926550"
+          }
+        ],
+        "luad_drivers": [],
+        "driver_note": "No canonical LUAD driver genes in top DEGs",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "12",
+    "n_cells": 500,
+    "top_degs": [
+      "DERL3",
+      "MZB1",
+      "TNFRSF17",
+      "JSRP1",
+      "FCRL5",
+      "IGHGP",
+      "RP11-290F5.1",
+      "RP11-16E12.2",
+      "IGHG2",
+      "IGLV6-57",
+      "POU2AF1",
+      "IGLV3-1",
+      "CD79A",
+      "FKBP11",
+      "IGKV1-12",
+      "PKHD1L1",
+      "SPAG4",
+      "JCHAIN",
+      "PNOC",
+      "SLAMF7"
+    ],
+    "top_pathways_str": "",
+    "gpt4o_naive": "Cluster 12 is most consistent with a **plasma cell / antibody-secreting B-cell state**, likely a relatively mature **immunoglobulin-producing plasmablast/plasma cell** population. This is supported by **MZB1, DERL3, JCHAIN, TNFRSF17 (BCMA), SLAMF7, FCRL5, CD79A, POU2AF1**, and multiple **immunoglobulin heavy/light chain genes** (**IGHG2, IGHGP, IGLV/IGKV genes**).  \n\nThe dominant biology appears to be **humoral immune activation and high-rate antibody production**, with strong engagement of **immunoglobulin synthesis, folding, assembly, and secretory/ER proteostasis programs**. **MZB1, DERL3, and FKBP11** are particularly compatible with a secretory plasma-cell program. **JCHAIN** suggests production of polymeric immunoglobulins in at least part of the cluster. I would be cautious about over-interpreting less familiar genes here without additional validation.\n\nIn the LUAD tumor microenvironment, these cells may contribute to **local antitumor humoral immunity**, including antibody production against tumor-associated antigens, and may also reflect **tertiary lymphoid structure\u2013like immune activity**. However, whether they are protective, neutral, or even immunoregulatory in this tumor would require clinical/contextual data beyond this marker list.",
+    "versionB_narrative": "Cluster 12 cannot be assigned a confident biological identity from the current evidence packet. No differentially expressed genes were verified at the UniProt level, no key gene-function annotations were retrieved, and no Reactome pathways were confirmed (knowledge agents summary). In addition, no canonical LUAD driver genes were detected among the top DEGs, and the LUAD pathway relevance score was 0% (knowledge agents summary). Together, these findings argue against making a strong claim that this cluster represents a malignant LUAD cell state.\n\n[UNCERTAIN] This cluster may represent a non-cancer cell population rather than tumor epithelial cells, because the evidence packet explicitly notes low direct LUAD pathway relevance and states that it \u201cmay be non-cancer cell type\u201d (knowledge agents summary). However, the packet does not provide validated marker genes to support a specific lineage assignment. Therefore, [UNCERTAIN] labels such as plasma cell, B cell, stromal cell, or other immune compartment should be considered provisional and are not directly supported by the verified evidence here. The baseline interpretation suggests a plasma cell/antibody-secreting program, but this is not corroborated by the verified DEG, UniProt, or Reactome sections and should therefore be treated cautiously.\n\nNo conflicts were flagged by the agents, but multiple uncertainty flags indicate that interpretation should remain highly hedged.\n\nConfidence statement: Confidence in any specific annotation for Cluster 12 is very low because the evidence packet lacks validated markers, pathways, and LUAD driver support.",
+    "orchestration": {
+      "cluster": "12",
+      "overall_confidence": 0.09,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 0.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Fewer than half of enriched pathways confirmed in Reactome",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [],
+        "luad_drivers": [],
+        "driver_note": "No canonical LUAD driver genes in top DEGs",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "13",
+    "n_cells": 500,
+    "top_degs": [
+      "PGC",
+      "AQP4",
+      "LAMP3",
+      "CRTAC1",
+      "CLDN18",
+      "GKN2",
+      "PEBP4",
+      "ABCA3",
+      "WIF1",
+      "ALPL",
+      "HHIP",
+      "CACNA2D2",
+      "KCNJ15",
+      "FLRT3",
+      "DMBT1",
+      "LHX9",
+      "SFTPD",
+      "SELENBP1",
+      "AQP1",
+      "SLC34A2"
+    ],
+    "top_pathways_str": "Bile Acid Metabolism",
+    "gpt4o_naive": "Cluster 13 most likely represents an **alveolar epithelial, type II\u2013like differentiated tumor cell state** (or closely related secretory alveolar lineage). This is supported by **ABCA3, SFTPD, SLC34A2, AQP4, CLDN18, and HHIP**, which are strongly associated with alveolar/lung epithelial identity, surfactant handling, and epithelial barrier features. **LAMP3** may indicate an activated/stressed epithelial program, but on its own does not define the cluster.\n\nThe dominant biology appears to involve **surfactant production/processing**, **epithelial transport and barrier function**, and **lung lineage differentiation/homeostasis**. Genes such as **ABCA3** and **SFTPD** support surfactant-related function, while **CLDN18, AQP4, AQP1, KCNJ15, and SLC34A2** suggest ion/fluid transport and tight-junction epithelial physiology. **WIF1** and **HHIP** are consistent with developmental signaling modulation, though the exact pathway activity cannot be concluded from markers alone.\n\nIn the LUAD microenvironment, this cluster likely reflects a **more differentiated alveolar-like malignant compartment** or possibly residual alveolar epithelial cells. Functionally, such cells may help maintain a **secretory/barrier niche**, influence **airspace fluid balance**, and shape local signaling, potentially marking a **less dedifferentiated tumor state**.",
+    "versionB_narrative": "Cluster 13 (500 cells) cannot be assigned a specific LUAD cell identity with high confidence based on the current evidence packet. The strongest direct signal is a single confirmed Reactome enrichment for **bile acid and bile salt metabolism** (agent: pathway analysis), indicating that this cluster is associated with a metabolic program related to bile acid handling rather than a clearly defined canonical LUAD program. However, no verified differentially expressed genes were recovered (agent: DEG verification), and no UniProt-confirmed gene-function annotations were available to anchor a more specific lineage interpretation.\n\n[UNCERTAIN] Because the **LUAD pathway relevance score is 0%** and the packet explicitly notes **low direct LUAD pathway relevance**, this cluster may represent a **non-malignant or non-tumor-associated cell population** rather than a tumor epithelial state (agent: LUAD relevance scoring; uncertainty flags). [UNCERTAIN] Alternatively, it could reflect a metabolically specialized subpopulation within the tumor microenvironment, but the absence of validated marker genes prevents a defensible assignment to epithelial, immune, stromal, or endothelial compartments (agent: DEG verification; uncertainty flags).\n\nNo canonical **LUAD driver genes** were detected in the top DEGs, and the packet specifically states that no LUAD-relevant driver genes are present (agent: driver-gene screen). No conflicts were flagged across agents.\n\nOverall, confidence in this interpretation is low because the cluster lacks verified marker genes and shows only weak, non-specific pathway support.",
+    "orchestration": {
+      "cluster": "13",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Bile Acid Metabolism",
+            "reactome_id": "R-HSA-194068",
+            "exact_name": "<span class=\"highlighting\" >Bile</span> <span class=\"highlighting\" >acid</span> and <span class=\"highlighting\" >bile</span> salt <span class=\"highlighting\" >metabolism</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-194068"
+          }
+        ],
+        "luad_drivers": [],
+        "driver_note": "No canonical LUAD driver genes in top DEGs",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "14",
+    "n_cells": 500,
+    "top_degs": [
+      "RPS26",
+      "SFTPC",
+      "CREM",
+      "HLA-B",
+      "BTG1",
+      "ZFP36L2",
+      "CXCR4",
+      "IL32",
+      "MCL1",
+      "SRGN",
+      "DDIT4",
+      "SPOCK2",
+      "EEF1D",
+      "RPL3",
+      "RPS3",
+      "BIRC3",
+      "ARHGDIB",
+      "FAM177A1",
+      "LTB",
+      "SAMSN1"
+    ],
+    "top_pathways_str": "Ribosome; Coronavirus disease; Allograft Rejection; Primary immunodeficiency; Hematopoietic cell lineage",
+    "gpt4o_naive": "Cluster 14 most likely represents a **lymphoid immune population, probably activated T cells**, rather than tumor epithelial cells, although the presence of **SFTPC** is unusual and could reflect ambient RNA contamination or a small mixed signal from alveolar epithelial cells. The overall signature is driven by immune-associated genes such as **CXCR4, IL32, LTB, BTG1, ZFP36L2, ARHGDIB, SRGN,** and **SAMSN1**, which is more consistent with T-cell/lymphocyte identity than LUAD cells.\n\nFunctionally, this cluster suggests **immune activation/stress adaptation and survival signaling**. **HLA-B** supports antigen-presentation-related immune context, while **DDIT4** points to cellular stress/metabolic adaptation, and **MCL1** and **BIRC3** suggest anti-apoptotic/survival programs. **CXCR4** may indicate chemotactic trafficking or tissue retention. **CREM, BTG1,** and **ZFP36L2** are compatible with lymphocyte activation/regulatory state, though the exact subtype is uncertain.\n\nIn the LUAD tumor microenvironment, these cells may contribute to **immune surveillance or chronic inflammatory signaling**, but could also represent a **tumor-infiltrating lymphocyte population under stress and survival pressure**, potentially with altered migratory behavior.",
+    "versionB_narrative": "Cluster 14 (500 cells) is difficult to assign with confidence because no verified differentially expressed genes were recovered in the evidence packet, and the overall confidence is low (44%) with an explicit warning to interpret cell type cautiously (evidence packet uncertainty flags). The only directly supported molecular feature is detection of the LUAD-relevant driver gene **SFTPC** (driver-gene agent), which is a known LUAD-relevant gene in this dataset context. However, because no verified DEGs or UniProt-supported marker functions were retrieved, this signal alone is insufficient to classify the cluster as malignant epithelial, alveolar, or any other specific lineage.\n\nPathway support is also limited and nonspecific. Reactome hits include **ribosome-related rescue/quality-control**, **tRNA aminoacylation**, and broad disease/immunodeficiency terms (Reactome agent), but these do not provide a clear lineage identity or a strong LUAD-specific program. Consistent with this, the LUAD pathway relevance score is **0%** (LUAD pathway agent), and the packet explicitly notes that this cluster may represent a **non-cancer cell type** (uncertainty flags).\n\nAccordingly, the most defensible interpretation is that Cluster 14 is an **unresolved population** with weak and ambiguous transcriptomic support; [UNCERTAIN] the **SFTPC** signal could indicate a minor alveolar epithelial/LUAD-related component, but this cannot be established from the current evidence. No conflicts were flagged by the agents.\n\n**Confidence:** Low confidence; this cluster should be treated as unassigned/ambiguous pending stronger marker validation.",
+    "orchestration": {
+      "cluster": "14",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Ribosome",
+            "reactome_id": "R-HSA-9954714",
+            "exact_name": "PELO:HBS1L and ABCE1 dissociate a <span class=\"highlighting\" >ribosome</span> on a non-stop mRNA",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9954714"
+          },
+          {
+            "query_name": "Coronavirus disease",
+            "reactome_id": "R-HSA-1643685",
+            "exact_name": "<span class=\"highlighting\" >Disease</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-1643685"
+          },
+          {
+            "query_name": "Allograft Rejection",
+            "reactome_id": "R-HSA-379724",
+            "exact_name": "tRNA Aminoacylation",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-379724"
+          },
+          {
+            "query_name": "Primary immunodeficiency",
+            "reactome_id": "R-HSA-5603027",
+            "exact_name": "IKBKG deficiency causes anhidrotic ectodermal dysplasia with <span class=\"highlighting\" >immunodeficiency</span> (EDA-ID) (via TLR)",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-5603027"
+          },
+          {
+            "query_name": "Hematopoietic cell lineage",
+            "reactome_id": "R-HSA-9925563",
+            "exact_name": "Developmental <span class=\"highlighting\" >Lineage</span> of Pancreatic Ductal Cells",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9925563"
+          }
+        ],
+        "luad_drivers": [
+          "SFTPC"
+        ],
+        "driver_note": "Contains known LUAD-relevant genes: SFTPC",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "15",
+    "n_cells": 500,
+    "top_degs": [
+      "GGTLC1",
+      "SLC10A2",
+      "RP1-60O19.1",
+      "CA12",
+      "PLA2G1B",
+      "CPB2",
+      "CYP4B1",
+      "SUSD2",
+      "C4BPA",
+      "LL22NC03-N95F10.1",
+      "CLDN18",
+      "C1orf167",
+      "SELENBP1",
+      "FOLR1",
+      "BMP2",
+      "CD24",
+      "PIGR",
+      "MESP2",
+      "NPR1",
+      "AARD"
+    ],
+    "top_pathways_str": "KRAS Signaling Up",
+    "gpt4o_naive": "Cluster 15 most likely represents a **malignant epithelial/alveolar-like LUAD cell state**, likely with features of **secretory differentiated tumor cells** rather than immune or stromal cells. This is supported by **CLDN18, FOLR1, CD24, PIGR, CA12, and SELENBP1**, which are consistent with epithelial identity and are often seen in lung adenocarcinoma differentiation programs. **CLDN18** and **PIGR** suggest barrier/secretory epithelial functions, while **CA12** points to **pH regulation** and adaptation to epithelial/tumor metabolic conditions. **FOLR1** is a well-known LUAD-associated epithelial marker.  \n\nActive programs likely include **epithelial transport and secretion** (**SLC10A2, PIGR, PLA2G1B, CPB2**), **tight junction/barrier organization** (**CLDN18**), and **metabolic/xenobiotic handling** (**CYP4B1, SELENBP1**). Some genes here are unusual for lung tissue (**SLC10A2, PLA2G1B, CPB2, MESP2**), so this cluster may reflect an **aberrantly differentiated tumor program** rather than a normal lung lineage; those functions should be interpreted cautiously.  \n\nIn the LUAD microenvironment, these cells may contribute to **tumor epithelial structure, luminal secretion, metabolic adaptation, and local niche remodeling**, potentially marking a **more differentiated tumor subpopulation**.",
+    "versionB_narrative": "Cluster 15 (500 cells) cannot be assigned a confident cell identity from the current evidence packet because no differentially expressed genes were UniProt-verified, and DEG verification confidence is explicitly flagged as low (knowledge agents: DEG verification summary; uncertainty flag). Accordingly, any lineage or malignant-state annotation should be treated cautiously. [UNCERTAIN] This cluster may represent a tumor-associated signaling state rather than a clearly resolved cell type, because the only confirmed pathway signal is **KRAS Signaling Up \u2192 Signaling by Hippo** (knowledge agent: Reactome pathway confirmation). This suggests enrichment for a signaling program linked to KRAS-associated output and Hippo pathway activity, but does not by itself establish epithelial, stromal, or immune identity (knowledge agent: Reactome pathway confirmation).\n\nNo canonical LUAD driver genes were detected in the top DEGs, and the packet specifically notes that no LUAD-relevant driver genes are present (knowledge agent: driver-gene summary). Therefore, there is no direct evidence here for a driver-defined malignant subclone such as EGFR-, KRAS-, or ALK-driven tumor cells (knowledge agent: driver note). The overall LUAD pathway relevance score is modest (33%), which further supports a restrained interpretation rather than a strong tumor-state assignment (knowledge agent: LUAD pathway relevance score).\n\nBecause no conflicts were detected, the main limitation is uncertainty from weak DEG support rather than contradictory evidence. Confidence: low-to-moderate, with the interpretation driven primarily by a single confirmed KRAS/Hippo-related pathway signal rather than robust marker genes.",
+    "orchestration": {
+      "cluster": "15",
+      "overall_confidence": 0.54,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.6333333333333333
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "KRAS Signaling Up",
+            "reactome_id": "R-HSA-2028269",
+            "exact_name": "<span class=\"highlighting\" >Signaling</span> by Hippo",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-2028269"
+          }
+        ],
+        "luad_drivers": [],
+        "driver_note": "No canonical LUAD driver genes in top DEGs",
+        "luad_relevance": 0.333,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "16",
+    "n_cells": 500,
+    "top_degs": [
+      "FCN1",
+      "S100A12",
+      "CTB-61M7.2",
+      "CFP",
+      "CD300E",
+      "C5AR1",
+      "IL1B",
+      "CSTA",
+      "S100A8",
+      "EREG",
+      "LST1",
+      "G0S2",
+      "AIF1",
+      "LYZ",
+      "SERPINB2",
+      "LGALS2",
+      "NRG1",
+      "CXCL8",
+      "S100A9",
+      "PLAUR"
+    ],
+    "top_pathways_str": "TNF-alpha Signaling via NF-kB; Inflammatory Response; Complement; IL-17 signaling pathway; Pertussis",
+    "gpt4o_naive": "Cluster 16 most likely represents **inflammatory monocytes / monocyte-derived myeloid cells**, rather than resident alveolar macrophages or dendritic cells. This is supported by **FCN1, S100A8, S100A9, S100A12, IL1B, CXCL8, C5AR1, CD300E, PLAUR, LYZ, LST1, AIF1,** and **SERPINB2**, a classic inflammatory myeloid program. The strong **FCN1/S100A8/S100A9** pattern is especially consistent with recently recruited blood-derived monocytes in an activated state.\n\nKey active processes likely include **innate immune activation**, **acute inflammatory signaling**, **IL-1\u2013associated responses**, **chemotaxis/neutrophil recruitment** (via **CXCL8**), **complement/anaphylatoxin sensing** (**C5AR1, CFP**), and **tissue-remodeling / migratory programs** (**PLAUR, EREG**). **LGALS2** and **G0S2** are also compatible with activated inflammatory myeloid biology. I am less certain about the specific contribution of **CTB-61M7.2** here.\n\nIn the LUAD tumor microenvironment, these cells likely contribute to a **pro-inflammatory but potentially tumor-supportive myeloid niche**, promoting leukocyte recruitment, amplifying cytokine cascades, and possibly enhancing tumor invasion, stromal remodeling, and immune dysregulation.",
+    "versionB_narrative": "Cluster 16 is most consistent with an [UNCERTAIN] immune/myeloid-associated population rather than a malignant LUAD epithelial cluster, based on the pathway-level evidence and the absence of detectable LUAD driver genes in the provided signal. Specifically, the evidence packet reports confirmed enrichment for **NIK\u2192noncanonical NF-kB signaling**, **CD163-mediated anti-inflammatory response**, and the **complement cascade** (knowledge agents: Reactome/pathway agent), which together support an inflammatory or immunoregulatory cell-state interpretation. The additional presence of **G alpha (z) signalling events** is noted, but its cell-type specificity is [UNCERTAIN] in this context (Reactome/pathway agent).\n\nBecause **no verified DEGs** were recovered and **no UniProt-confirmed marker functions** were retrieved (DEG verification/functional annotation agents), the cluster cannot be assigned confidently to a specific myeloid subtype from the current evidence alone. The **CD163-mediated anti-inflammatory response** particularly suggests an [UNCERTAIN] macrophage-like or monocyte-derived suppressive program, while the **complement** and **NF-kB-related** signals are compatible with broader innate immune activation (Reactome/pathway agent). \n\nImportantly, **no canonical LUAD driver genes** were detected among the top DEGs, and the **LUAD pathway relevance score was 0%** (driver/pathway relevance agent), arguing against this cluster representing a tumor-cell compartment. No conflicts were flagged, but the packet explicitly notes **low DEG verification confidence**, **low direct LUAD relevance**, and **overall confidence below threshold**, so this interpretation should be treated as provisional.\n\nConfidence: low; this cluster is best described as an [UNCERTAIN] non-malignant inflammatory/immunoregulatory myeloid-like population based on pathway evidence alone.",
+    "orchestration": {
+      "cluster": "16",
+      "overall_confidence": 0.37,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 0.8,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "TNF-alpha Signaling via NF-kB",
+            "reactome_id": "R-HSA-5676590",
+            "exact_name": "NIK-->noncanonical <span class=\"highlighting\" >NF</span>-<span class=\"highlighting\" >kB</span> <span class=\"highlighting\" >signaling</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-5676590"
+          },
+          {
+            "query_name": "Inflammatory Response",
+            "reactome_id": "R-HSA-9662834",
+            "exact_name": "CD163 mediating an anti-<span class=\"highlighting\" >inflammatory</span> <span class=\"highlighting\" >response</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9662834"
+          },
+          {
+            "query_name": "Complement",
+            "reactome_id": "R-HSA-166658",
+            "exact_name": "<span class=\"highlighting\" >Complement</span> cascade",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-166658"
+          },
+          {
+            "query_name": "Pertussis",
+            "reactome_id": "R-HSA-418597",
+            "exact_name": "G alpha (z) signalling events",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-418597"
+          }
+        ],
+        "luad_drivers": [],
+        "driver_note": "No canonical LUAD driver genes in top DEGs",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "17",
+    "n_cells": 500,
+    "top_degs": [
+      "CLDN5",
+      "CLEC14A",
+      "RAMP2",
+      "RAMP3",
+      "EMCN",
+      "VWF",
+      "CXorf36",
+      "ADGRL4",
+      "CDH5",
+      "PCDH17",
+      "ROBO4",
+      "PCAT19",
+      "TM4SF18",
+      "MYCT1",
+      "CALCRL",
+      "CYYR1",
+      "MMRN2",
+      "ECSCR",
+      "PTPRB",
+      "TIE1"
+    ],
+    "top_pathways_str": "Cell adhesion molecules; Leukocyte transendothelial migration; KRAS Signaling Up",
+    "gpt4o_naive": "Cluster 17 is most consistent with **vascular endothelial cells**, likely a **tumor-associated capillary/quiescent-to-angiogenic endothelial state**. This is strongly supported by canonical endothelial markers **CLDN5, EMCN, VWF, CDH5, ROBO4, PTPRB, TIE1, CLEC14A, ECSCR, CALCRL, RAMP2,** and **RAMP3**.\n\nThe dominant biology is **blood vessel identity and vascular homeostasis**, with evidence for **endothelial barrier/junction organization** (**CLDN5, CDH5**), **angiogenesis and vessel remodeling** (**CLEC14A, ROBO4, TIE1, ADGRL4/ELTD1, MMRN2**), and **vascular signaling** linked to the **adrenomedullin\u2013CALCRL/RAMP2/3 axis**, which is important in endothelial survival and permeability regulation. **VWF** further supports a bona fide vascular endothelial phenotype. Some genes here are less familiar or less well characterized in this context (for example **CXorf36, PCAT19, TM4SF18, MYCT1, CYYR1**), so their specific contribution should be interpreted cautiously.\n\nIn the LUAD tumor microenvironment, these cells likely form and maintain the **tumor vasculature**, supporting **perfusion, nutrient delivery, and metastatic access**, while also shaping **immune-cell trafficking** and potentially contributing to an **abnormal, remodeling tumor vascular niche**.",
+    "versionB_narrative": "Cluster 17 is most consistent with an [UNCERTAIN] endothelial/vascular-associated population in primary LUAD, but this assignment should be made cautiously because DEG verification confidence is explicitly low (uncertainty flag). The strongest direct evidence is the presence of the LUAD-relevant genes **CDH5** and **VWF** (driver-gene agent), which are compatible with a vascular program, although no verified DEGs were confirmed in the packet (DEG agent). Because the marker-level evidence is limited, a more specific endothelial subtype cannot be established from the provided data alone.\n\nPathway evidence supports functions related to tissue barrier remodeling and motility. Reactome identified **\u201cApoptotic cleavage of cell adhesion proteins\u201d** under cell adhesion molecules and **\u201cRUNX2 regulates genes involved in cell migration\u201d** under leukocyte transendothelial migration (pathway agent), suggesting [UNCERTAIN] adhesion remodeling and migratory behavior in this cluster. The additional enrichment of **\u201cSignaling by Hippo\u201d** linked to **KRAS signaling up** (pathway agent) indicates [UNCERTAIN] engagement of growth- or mechanotransduction-associated signaling relevant to the tumor microenvironment. No conflict flags were reported.\n\nOverall, Cluster 17 is best described as an [UNCERTAIN] vascular/endothelial-like LUAD-associated cell population characterized by **CDH5** and **VWF** with pathway support for adhesion, migration, and Hippo-linked signaling, but lacking robust verified DEG support for a higher-confidence annotation.\n\nConfidence: moderate-to-low, because the interpretation is supported by pathway and driver-gene evidence but limited by absent verified DEGs.",
+    "orchestration": {
+      "cluster": "17",
+      "overall_confidence": 0.54,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.6333333333333333
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Cell adhesion molecules",
+            "reactome_id": "R-HSA-351906",
+            "exact_name": "Apoptotic cleavage of <span class=\"highlighting\" >cell</span> <span class=\"highlighting\" >adhesion</span>  proteins",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-351906"
+          },
+          {
+            "query_name": "Leukocyte transendothelial migration",
+            "reactome_id": "R-HSA-8941332",
+            "exact_name": "RUNX2 regulates genes involved in cell <span class=\"highlighting\" >migration</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-8941332"
+          },
+          {
+            "query_name": "KRAS Signaling Up",
+            "reactome_id": "R-HSA-2028269",
+            "exact_name": "<span class=\"highlighting\" >Signaling</span> by Hippo",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-2028269"
+          }
+        ],
+        "luad_drivers": [
+          "CDH5",
+          "VWF"
+        ],
+        "driver_note": "Contains known LUAD-relevant genes: CDH5, VWF",
+        "luad_relevance": 0.333,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "18",
+    "n_cells": 500,
+    "top_degs": [
+      "MKI67",
+      "ASPM",
+      "RRM2",
+      "BIRC5",
+      "TPX2",
+      "AURKB",
+      "CENPA",
+      "CDCA5",
+      "GTSE1",
+      "CKAP2L",
+      "TYMS",
+      "CCNA2",
+      "SPC25",
+      "TOP2A",
+      "HJURP",
+      "ASF1B",
+      "CDC20",
+      "KIAA0101",
+      "CDK1",
+      "CENPF"
+    ],
+    "top_pathways_str": "G2-M Checkpoint; E2F Targets; Mitotic Spindle; Cell cycle; Progesterone-mediated oocyte maturation",
+    "gpt4o_naive": "Cluster 18 most likely represents a **highly proliferative/cycling tumor cell population** rather than a differentiated stromal or immune cell type. The marker set is dominated by canonical **cell-cycle and mitotic genes**, including **MKI67, TOP2A, CDK1, CCNA2, CDC20, AURKB, CENPA, CENPF, TPX2, SPC25, ASPM, and BIRC5**, which strongly indicates cells in **S phase and G2/M**.\n\nThe main active programs are therefore **DNA replication**, **chromosome segregation**, **spindle assembly**, **centromere/kinetochore function**, and **mitotic progression**. Genes such as **RRM2, TYMS, and ASF1B** support DNA synthesis/replication, while **AURKB, TPX2, CENPA, SPC25, and CDC20** are consistent with active mitosis. This is a classic proliferative signature, but from these genes alone I cannot determine a more specific LUAD lineage state.\n\nIn the LUAD tumor microenvironment, this cluster likely marks the **actively expanding malignant compartment**, contributing to **tumor growth**, **high cell turnover**, and potentially **aggressive disease behavior**. Such cells may also be associated with **replication stress** and increased sensitivity to **cell-cycle-targeting therapies**, though that would require additional evidence.",
+    "versionB_narrative": "Cluster 18 is best interpreted as a **proliferation-associated/cycling cell population**, based on the pathway-level evidence rather than gene-level markers. Specifically, confirmed Reactome enrichment supports **Cell Cycle**, **G2-M Checkpoint**, and **Mitotic Spindle Checkpoint** activity, with additional enrichment for **E2F targets / ERK-MAPK targets** (agent: pathway analysis). Together, these signals indicate that many cells in this cluster are actively traversing late cell-cycle states, particularly **G2/M-associated mitotic programs** (agent: pathway analysis).\n\nHowever, the biological identity of the underlying cell type remains unresolved. There were **no verified DEGs** recovered in the evidence packet and **no UniProt-confirmed marker functions** available (agent: DEG verification / functional annotation). Accordingly, [UNCERTAIN] this cluster could represent **cycling tumor cells** or, alternatively, **proliferating non-malignant stromal or immune cells**, especially because the packet explicitly notes **low direct LUAD pathway relevance** and warns that this **may be a non-cancer cell type** (agent: uncertainty assessment). \n\nNo canonical **LUAD driver genes** were detected among the top DEGs, and the LUAD pathway relevance score was **0%** (agent: driver/pathway relevance analysis), arguing against a confidently assigned malignant LUAD program in this cluster. No conflicts were flagged across agents.\n\n**Confidence:** Low-to-moderate confidence that Cluster 18 captures a cycling/proliferative state, but low confidence in its precise cellular identity.",
+    "orchestration": {
+      "cluster": "18",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "G2-M Checkpoint",
+            "reactome_id": "R-HSA-69618",
+            "exact_name": "Mitotic Spindle <span class=\"highlighting\" >Checkpoint</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-69618"
+          },
+          {
+            "query_name": "E2F Targets",
+            "reactome_id": "R-HSA-198753",
+            "exact_name": "ERK/MAPK <span class=\"highlighting\" >targets</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-198753"
+          },
+          {
+            "query_name": "Mitotic Spindle",
+            "reactome_id": "R-HSA-69618",
+            "exact_name": "<span class=\"highlighting\" >Mitotic</span> <span class=\"highlighting\" >Spindle</span> Checkpoint",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-69618"
+          },
+          {
+            "query_name": "Cell cycle",
+            "reactome_id": "R-HSA-1640170",
+            "exact_name": "<span class=\"highlighting\" >Cell</span> <span class=\"highlighting\" >Cycle</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-1640170"
+          },
+          {
+            "query_name": "Progesterone-mediated oocyte maturation",
+            "reactome_id": "R-HSA-9683610",
+            "exact_name": "<span class=\"highlighting\" >Maturation</span> of nucleoprotein",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9683610"
+          }
+        ],
+        "luad_drivers": [],
+        "driver_note": "No canonical LUAD driver genes in top DEGs",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  },
+  {
+    "cluster": "19",
+    "n_cells": 500,
+    "top_degs": [
+      "MORN5",
+      "C11orf97",
+      "TUBA4B",
+      "CAPSL",
+      "CFAP43",
+      "LDLRAD1",
+      "ERICH3",
+      "WDR38",
+      "DNAH9",
+      "RP11-356K23.1",
+      "DYDC2",
+      "MS4A8",
+      "CATSPERD",
+      "C11orf16",
+      "DNAH12",
+      "VWA3B",
+      "C6orf118",
+      "TEKT1",
+      "LRRC71",
+      "CFAP77"
+    ],
+    "top_pathways_str": "Huntington disease; Amyotrophic lateral sclerosis; Pathways of neurodegeneration",
+    "gpt4o_naive": "Cluster 19 most likely represents a **rare ciliated epithelial cell population**, likely resembling **multiciliated airway epithelial cells** rather than a malignant LUAD program. This interpretation is driven by multiple genes linked to **motile cilia/axoneme structure and function**, including **DNAH9, DNAH12, CFAP43, CFAP77, TEKT1, WDR38, DYDC2, VWA3B,** and **CATSPERD**. Several other markers here are poorly characterized (**MORN5, C11orf97, C11orf16, C6orf118, ERICH3, LRRC71**), so their contribution is uncertain.\n\nThe dominant active biology is therefore likely **ciliogenesis**, **microtubule-based motility**, and **assembly/maintenance of motile ciliary apparatus**. The presence of **TUBA4B** also fits a microtubule-rich structural program. Overall, this cluster appears more consistent with a **differentiated epithelial lineage state** than with immune or stromal identity.\n\nIn the LUAD tumor microenvironment, such cells may represent **residual normal airway epithelium** or **tumor-associated epithelial cells retaining ciliated differentiation**. Functionally, they could contribute to **mucociliary clearance and luminal homeostasis**, though in tumors this program may simply mark entrapped non-malignant airway cells. I would be cautious about overinterpreting a direct tumor-promoting role from these genes alone.",
+    "versionB_narrative": "Cluster 19 (500 cells) cannot be assigned a confident biological identity from the current evidence packet. The strongest evidence is actually negative: no verified differentially expressed genes were confirmed at the UniProt/human level (Agent 1), no key gene-function annotations were retrieved (Agent 1), and no canonical LUAD driver genes were detected among the top DEGs (Agent 3). Consistent with this, the LUAD pathway relevance score is 0% (Agent 3), which suggests this cluster may not represent a tumor-intrinsic LUAD program and could instead reflect a non-malignant or poorly resolved cell population (Agent 3).  \n\nThe Reactome results are not readily interpretable as a coherent LUAD-associated program: the reported terms include \u201cHuntington disease,\u201d \u201cAmyotrophic lateral sclerosis,\u201d and \u201cPathways of neurodegeneration,\u201d with mismatched descriptive text, so these enrichments should be treated cautiously and not over-interpreted biologically (Agent 2). No conflict flags were reported, but multiple uncertainty flags were raised, including low DEG verification confidence, low direct LUAD pathway relevance, and overall confidence below threshold (Agents 1/3).  \n\nAccordingly, we interpret Cluster 19 as an unresolved cell cluster with insufficient validated marker support for lineage assignment. [UNCERTAIN] It may represent a non-cancer cell type rather than malignant LUAD cells, but the present evidence is inadequate to specify a precise identity. No LUAD driver genes were identified in this cluster (Agent 3).  \n\nConfidence: Low, because the cluster lacks validated DEGs, lacks LUAD drivers, and has explicit low-confidence flags.",
+    "orchestration": {
+      "cluster": "19",
+      "overall_confidence": 0.44,
+      "agent_confidences": {
+        "deg": 0.0,
+        "pathway": 1.0,
+        "disease": 0.3
+      },
+      "conflict_flags": [],
+      "uncertainty_claims": [
+        "DEG verification confidence low \u2014 interpret cell type with caution",
+        "Low direct LUAD pathway relevance \u2014 may be non-cancer cell type",
+        "Overall confidence below threshold \u2014 narrative should be hedged"
+      ],
+      "grounding_summary": {
+        "verified_genes": [],
+        "gene_functions": {},
+        "reactome_pathways": [
+          {
+            "query_name": "Huntington disease",
+            "reactome_id": "R-HSA-1643685",
+            "exact_name": "<span class=\"highlighting\" >Disease</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-1643685"
+          },
+          {
+            "query_name": "Amyotrophic lateral sclerosis",
+            "reactome_id": "R-HSA-9758920",
+            "exact_name": "Formation of <span class=\"highlighting\" >lateral</span> plate mesoderm",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9758920"
+          },
+          {
+            "query_name": "Pathways of neurodegeneration",
+            "reactome_id": "R-HSA-9824443",
+            "exact_name": "Parasitic Infection <span class=\"highlighting\" >Pathways</span>",
+            "species": "Homo sapiens",
+            "url": "https://reactome.org/content/detail/R-HSA-9824443"
+          }
+        ],
+        "luad_drivers": [],
+        "driver_note": "No canonical LUAD driver genes in top DEGs",
+        "luad_relevance": 0.0,
+        "conflicts": []
+      }
+    }
+  }
+]
