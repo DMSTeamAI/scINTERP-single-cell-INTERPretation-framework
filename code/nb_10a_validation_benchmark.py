@@ -69,6 +69,7 @@ _FAMILY_PRIORITY = [
  ("cd4","lymphoid"), ("cd8","lymphoid"), ("cytotoxic t","lymphoid"), ("regulatory t","lymphoid"),
  ("treg","lymphoid"), ("mature b","lymphoid"), ("b cell","lymphoid"), ("b lymph","lymphoid"),
  ("t lymph","lymphoid"), ("t cell","lymphoid"), ("lymphocyte","lymphoid"),
+ ("t-cell","lymphoid"),("b-cell","lymphoid"),("caf","stromal"),("pvl","stromal"),("perivascular","stromal"),
 ]
 def family(label):
     t = (label or "").lower()

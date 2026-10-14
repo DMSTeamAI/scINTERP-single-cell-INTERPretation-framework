@@ -26,7 +26,7 @@ EVID = ROOT/"agent_evidence"/DATASET
 DEG  = ROOT/"DEG"/DATASET
 
 marker  = json.load(open(EVID/"marker_expression_evidence.json"))
-pathway = json.load(open(EVID/"pathway_evidence.json"))
+pathway = json.load(open(PATHWAY_FILE if "PATHWAY_FILE" in globals() else EVID/"pathway_evidence.json"))   # PATHWAY_FILE/OUT_FILE overrides: robustness runs (nb_14)
 disease = json.load(open(EVID/"disease_evidence.json"))
 gt = pd.read_csv(DEG/"cluster_ground_truth.csv", index_col=0); gt.index = gt.index.astype(str)
 CLUSTERS = list(marker.keys())
@@ -155,7 +155,7 @@ for cl in CLUSTERS:
     print(f"{cl:>2} | {r['confidence']:.2f} | {str(r['marker_call'])[:22]:22} | "
           f"{str(r['pathway_lineage'] or '-'):9} | {'Y' if r['agreement'] else '.':^5} | {keyflag}")
 
-json.dump(results, open(EVID/"orchestrated.json","w"), indent=1, default=str)
+json.dump(results, open(OUT_FILE if "OUT_FILE" in globals() else EVID/"orchestrated.json","w"), indent=1, default=str)
 
 n_abstain = sum(1 for r in results.values() if r["abstain"])
 n_disagree = sum(1 for r in results.values() if any("DISAGREE" in f for f in r["flags"]))

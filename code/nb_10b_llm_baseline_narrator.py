@@ -28,23 +28,22 @@ EVID = ROOT/"agent_evidence"/DATASET
 gt = pd.read_csv(DEG/"cluster_ground_truth.csv", index_col=0); gt.index = gt.index.astype(str)
 
 MODEL = "claude-haiku-4-5-20251001"     # SAME model for baseline AND narrator
-TISSUE = {"GSE131907":"lung (lung adenocarcinoma)", "GSE132465":"colon (colorectal cancer)"}[DATASET]
+TISSUE = {"GSE131907":"lung (lung adenocarcinoma)", "GSE132465":"colon (colorectal cancer)", "GSE176078":"breast (breast cancer)"}[DATASET]
 
 # ---------------- provider-agnostic LLM call ----------------
-try:
-    import anthropic
-except Exception:
-    import subprocess, sys
-    subprocess.run([sys.executable,"-m","pip","install","-q","anthropic","--break-system-packages"])
-    import anthropic
-_client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+import requests
+_URL = "https://api.anthropic.com/v1/messages"
+_HDR = {"x-api-key": ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json"}
 
 def _call_llm(system, user, max_tokens=400, retries=4):
+    # direct HTTPS (the anthropic SDK fails to connect inside this Fabric environment); API-default decoding as before
+    body = {"model": MODEL, "max_tokens": max_tokens, "system": system, "messages": [{"role": "user", "content": user}]}
     for a in range(retries):
         try:
-            r = _client.messages.create(model=MODEL, max_tokens=max_tokens,
-                    system=system, messages=[{"role":"user","content":user}])
-            return "".join(b.text for b in r.content if b.type=="text").strip()
+            r = requests.post(_URL, headers=_HDR, json=body, timeout=60)
+            if r.status_code in (429, 500, 502, 503, 529): raise RuntimeError(f"HTTP {r.status_code}")
+            if r.status_code != 200: print(f"  LLM call failed: HTTP {r.status_code} {r.text[:120]}"); return ""
+            return "".join(b["text"] for b in r.json()["content"] if b.get("type") == "text").strip()
         except Exception as e:
             if a < retries-1: time.sleep(3*(a+1)); continue
             print(f"  LLM call failed: {str(e)[:80]}"); return ""
@@ -68,7 +67,7 @@ _FAM = [("alveolar macrophage","myeloid"),("goblet","epithelial"),("ductal","epi
  ("nk cell","lymphoid"),("plasma cell","lymphoid"),("plasma","lymphoid"),("cd4","lymphoid"),
  ("cd8","lymphoid"),("cytotoxic t","lymphoid"),("regulatory t","lymphoid"),("treg","lymphoid"),
  ("mature b","lymphoid"),("b cell","lymphoid"),("b lymph","lymphoid"),("t lymph","lymphoid"),
- ("t cell","lymphoid"),("lymphocyte","lymphoid")]
+ ("t cell","lymphoid"),("lymphocyte","lymphoid"),("t-cell","lymphoid"),("b-cell","lymphoid"),("caf","stromal"),("pvl","stromal"),("perivascular","stromal")]
 def family(label):
     t=(label or "").lower()
     for k,f in _FAM:

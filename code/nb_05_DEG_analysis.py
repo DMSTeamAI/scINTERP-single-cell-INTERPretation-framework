@@ -33,6 +33,12 @@ CONFIG = {
     annot_glob="*cell_annotation*.txt*",
     subset_col_candidates=["Class"], subset_values=["Tumor"],
     celltype_col_candidates=["Cell_type","Cell_subtype"]),
+  "GSE176078": dict(
+    tissue="breast",
+    matrix_glob="*.mtx*",
+    annot_glob="*metadata*.csv*",
+    subset_col_candidates=[], subset_values=[],
+    celltype_col_candidates=["celltype_major"]),
 }[DATASET]
 
 QC = dict(min_genes=200, max_genes=5000, max_mito_pct=15, min_cells_per_gene=3,

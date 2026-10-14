@@ -19,7 +19,7 @@ assert "DATASET" in globals(), "Set DATASET before exec()"
 ROOT = Path("/lakehouse/default/Files/scRNA")
 DEG_DIR = ROOT/"DEG"/DATASET
 CACHE = ROOT/"cache"; CACHE.mkdir(parents=True, exist_ok=True)
-TISSUE = {"GSE131907": "lung", "GSE132465": "colon"}[DATASET]
+TISSUE = {"GSE131907": "lung", "GSE132465": "colon", "GSE176078": "breast"}[DATASET]
 CENSUS_VERSION = "2025-01-30"
 out = CACHE/f"census_{CENSUS_VERSION}_{TISSUE}.parquet"
 

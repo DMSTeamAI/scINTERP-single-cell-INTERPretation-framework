@@ -34,7 +34,7 @@ EXT_DIR  = ROOT/"external"
 CACHE    = ROOT/"cache"
 for d in (EVID_DIR, EXT_DIR, CACHE): d.mkdir(parents=True, exist_ok=True)
 
-TISSUE = {"GSE131907": "lung", "GSE132465": "colon"}[DATASET]
+TISSUE = {"GSE131907": "lung", "GSE132465": "colon", "GSE176078": "breast"}[DATASET]
 CENSUS_VERSION = "2025-01-30"     # pin an LTS release; report in Methods
 TODAY = date.today().isoformat()
 TOP_CANDIDATES = 3
@@ -144,6 +144,9 @@ _DENY_BY_TISSUE = {
               "hepatic","hepatocyte","biliary","cholangiocyte","liver progenitor","pancreatic","acinar"],
     "colon": ["alveolar","club cell","ciliated","ionocyte","pulmonary","type i pneumocyte",
               "type ii pneumocyte","hepatic","hepatocyte","biliary","pancreatic","acinar"],
+    # breast denylist fixed BEFORE the GSE176078 run (off-organ epithelia only)
+    "breast": ["alveolar","club cell","ciliated","ionocyte","pulmonary","pneumocyte","paneth","enterocyte",
+               "enteroendocrine","goblet","colonocyte","tuft","hepatic","hepatocyte","biliary","pancreatic","acinar"],
 }
 _DENY_SUBSTR = _DENY_SHARED + _DENY_BY_TISSUE.get(TISSUE, [])
 def _denied(ct):

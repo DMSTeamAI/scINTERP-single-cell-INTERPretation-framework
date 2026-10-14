@@ -35,6 +35,9 @@ CONTEXT = {
                    drivers={"EGFR","KRAS","TP53","STK11","BRAF","ALK","ROS1","MET","KEAP1","NKX2-1"}),
  "GSE132465": dict(keywords=["colorectal","colon carcinoma","colon adenocarcinoma","rectal"],
                    drivers={"APC","KRAS","TP53","SMAD4","BRAF","PIK3CA","FBXW7","CTNNB1","TCF7L2","MYC"}),
+ # driver list and keywords fixed BEFORE the GSE176078 run
+ "GSE176078": dict(keywords=["breast cancer","breast carcinoma","breast neoplasm","mammary"],
+                   drivers={"TP53","PIK3CA","ERBB2","ESR1","GATA3","CDH1","PTEN","BRCA1","BRCA2","MAP3K1","AKT1","KMT2C"}),
 }[DATASET]
 
 OT_GRAPHQL = "https://api.platform.opentargets.org/api/v4/graphql"
