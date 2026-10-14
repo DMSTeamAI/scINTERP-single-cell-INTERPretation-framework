@@ -1,11 +1,11 @@
-"""nb_08_disease_agent — Disease Agent (Open Targets GraphQL + GWAS Catalog).
+"""nb_08_disease_agent — Disease Agent (Open Targets GraphQL).
 
 Keeps two epistemically distinct things separate for the narrator:
   * "differentially expressed in OUR data"      (from nb_05 — the user's statistics)
   * "has PRIOR disease-association evidence"     (these records)
 Open Targets overall association (DISEASE_ASSOCIATION) and its genetic_association
-datatype (GENETIC_ASSOCIATION) are emitted as SEPARATE record types, plus GWAS Catalog
-as an independent human-genetics layer. Driver-gene hits for the tumor context are flagged.
+datatype (GENETIC_ASSOCIATION) are emitted as SEPARATE record types.
+Driver-gene hits for the tumor context are flagged.
 
 Negative control: housekeeping genes should surface little/no disease-specific association.
 
@@ -42,7 +42,6 @@ CONTEXT = {
 
 OT_GRAPHQL = "https://api.platform.opentargets.org/api/v4/graphql"
 MYGENE = "https://mygene.info/v3/query"
-GWAS = "https://www.ebi.ac.uk/gwas/rest/api/associations/search/findByGene"
 
 OT_QUERY = """
 query td($ensemblId: String!) {
@@ -109,23 +108,10 @@ def open_targets(gene, keywords):
                     details={"ensembl":ens,"context_relevant":rel}))
     return recs
 
-def gwas_catalog(gene, max_n=5):
-    j = _get_json(GWAS, params={"geneName":gene,"size":max_n})
-    if not j: return []
-    assocs = (j.get("_embedded") or {}).get("associations", [])
-    recs = []
-    for a in assocs[:max_n]:
-        traits = ", ".join(t.get("trait","") for t in a.get("efoTraits", [])) or "unspecified"
-        recs.append(dict(database="GWAS-Catalog", database_version="REST v1",
-            retrieval_date=TODAY, evidence_type="genetic_association",
-            subject=gene, gene=gene, predicate="gwas_associated_with", object=traits,
-            pvalue=a.get("pvalue"), details={}))
-    return recs
-
 def run_cluster(cl, degs):
     recs, notes, hit = [], [], set()
     for g in degs:
-        r = open_targets(g, CONTEXT["keywords"]) + gwas_catalog(g)
+        r = open_targets(g, CONTEXT["keywords"])
         if r: hit.add(g); recs.extend(r)
         if g.upper() in CONTEXT["drivers"]: notes.append(f"DRIVER:{g.upper()}")
         time.sleep(0.1)
@@ -165,7 +151,7 @@ driver_clusters = [cl for cl in CLUSTERS if outputs[cl]["drivers"]]
 print("\n" + "="*60 + f"""
 NOTEBOOK 08 COMPLETE
 {"="*60}
-Main function : Disease Agent (Open Targets + GWAS Catalog)
+Main function : Disease Agent (Open Targets)
 Dataset       : {DATASET}
 Clusters with driver-gene evidence : {len(driver_clusters)} {driver_clusters}
 Mean context-relevant records/cluster : {real_ctx:.1f}
